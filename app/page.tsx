@@ -181,6 +181,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Experience Section */}
+<section id="experience" className="py-24 bg-gray-50">
+  <div className="container mx-auto text-center px-6">
+    <motion.h2
+      className="text-4xl font-semibold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-600"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      Experience
+    </motion.h2>
+
+    <div className="space-y-12">
+      {/* Gabriel India Limited */}
+      <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
+        <div className="flex justify-center mb-6">
+          <Image
+            src="/gb.png"
+            alt="Gabriel India Limited"
+            width={150}
+            height={50}
+            className="object-contain"
+          />
+        </div>
+        <h3 className="text-2xl font-semibold mb-2 text-white">Gabriel India Limited</h3>
+        <p className="text-gray-400 italic">ANCA Operator | July 2022 - December 2023</p>
+        <ul className="list-disc text-left text-gray-300 mt-4 space-y-2">
+          <li>Operated ANCA machine tools to produce high-quality automotive parts.</li>
+          <li>Monitored machine performance and ensured product quality through regular checks.</li>
+          <li>Collaborated with engineering teams to optimize machine setups and workflows.</li>
+          <li>Trained junior operators and ensured adherence to safety and operational standards.</li>
+        </ul>
+      </div>
+
+      {/* DANA Private Limited */}
+      <div className="bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
+        <div className="flex justify-center mb-6">
+          <Image
+            src="/dana.jpg"
+            alt="DANA Private Limited"
+            width={150}
+            height={50}
+            className="object-contain"
+          />
+        </div>
+        <h3 className="text-2xl font-semibold mb-2 text-white">DANA Private Limited</h3>
+        <p className="text-gray-200 italic">ANCA Operator | January 2022</p>
+        <ul className="list-disc text-left text-gray-100 mt-4 space-y-2">
+          <li>Set up and operated ANCA CNC grinding machines for precision parts production.</li>
+          <li>Collaborated with the production team to troubleshoot issues and improve efficiency.</li>
+          <li>Consistently met production deadlines while maintaining high standards of product quality.</li>
+          <li>Utilized Lean Manufacturing principles to optimize workflows and reduce downtime.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-gray-800 text-white">
         <div className="container mx-auto text-center px-6">

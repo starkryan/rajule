@@ -12,8 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: ['Doto', 'Arial', 'sans-serif'],  // Add Doto font here
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

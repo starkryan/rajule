@@ -1,5 +1,4 @@
 "use client";
-
 import { TypeAnimation } from 'react-type-animation';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -11,7 +10,6 @@ import { DiLinux } from 'react-icons/di';
 import { FaNodeJs, FaReact, FaGithub } from 'react-icons/fa';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { SiMysql } from "react-icons/si";
-import { SiShadcnui } from "react-icons/si";
 
 
 export default function Home() {
@@ -29,7 +27,11 @@ export default function Home() {
         <meta name="author" content="Rohit Rayaan" />
         <meta name="keywords" content="Rohit Rayaan, Portfolio, Mechanical Engineer, Web Developer, Computer Science" />
         <link rel="icon" href="/favicon.ico" />
+
       </Head>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Doto:wght,ROND@800,4&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      </style>
 
       {/* Header Section */}
       <motion.header
@@ -119,7 +121,7 @@ export default function Home() {
           <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer">
             <SiMysql className="text-blue-600" /> {/* MySQL - blue */}
           </a>
-       
+
         </div>
 
 

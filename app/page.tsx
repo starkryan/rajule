@@ -59,7 +59,7 @@ export default function Home() {
         <div className="flex justify-center mb-8">
           <div className="relative inline-block rounded-full p-[2px] bg-gradient-to-r from-pink-500 to-pink-300">
             <Image
-              src="/author.jpg"
+              src="/author.webp"
               alt="Rohit Rayaan"
               className="rounded-full h-48 w-48 sm:h-56 sm:w-56 lg:h-64 lg:w-64"
               height={500}

@@ -52,8 +52,8 @@ export default function Home() {
       </motion.header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-48 text-center">
-        <div className="flex justify-center mb-12">
+      <section className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-24 text-center">
+        <div className="flex justify-center mb-8">
           <div className="relative inline-block rounded-full p-[2px] bg-gradient-to-r from-pink-500 to-pink-300">
             <Image
               src="/author.jpg"
@@ -64,8 +64,8 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="container mx-auto px-6">
-          <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-extrabold leading-tight">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
             Hi, I'm
             <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-300">
               Rohit Rayaan
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
 
         {/* Like Button (Heart) */}
-        <div className="mt-6 flex justify-center">
+        <div className="mt-4 flex justify-center">
           <button
             onClick={toggleLike}
             className={`p-2 transition-colors duration-200 ${liked ? 'text-red-500' : 'text-gray-400'}`}
@@ -96,17 +96,16 @@ export default function Home() {
             <Heart size={36} />
           </button>
         </div>
-        <div className="flex justify-center space-x-4 text-3xl my-8">
+        <div className="flex justify-center space-x-4 text-3xl my-4">
           <RiNextjsFill className="text-white" /> {/* Next.js - black */}
           <DiLinux className="text-yellow-600" />   {/* Linux - yellow */}
           <FaNodeJs className="text-green-600" />   {/* Node.js - green */}
           <FaReact className="text-blue-500" />     {/* React - blue */}
           <TbBrandReactNative className="text-blue-400" /> {/* React Native - light blue */}
           <FaGithub className="text-gray-200" />    {/* GitHub - gray */}
-          <SiMysql className='text-blue-600' />
         </div>
-
       </section>
+
 
       {/* About Section */}
       <section id="about" className="py-24 bg-gray-800 text-gray-100">

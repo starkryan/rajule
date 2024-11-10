@@ -7,7 +7,7 @@ import { Instagram, Gift, Cake, Heart } from 'lucide-react'; // Import relevant 
 import { useState } from 'react';
 import { RiNextjsFill } from 'react-icons/ri';
 import { DiLinux } from 'react-icons/di';
-import { FaNodeJs, FaReact, FaGithub } from 'react-icons/fa';
+import { FaNodeJs, FaReact, FaGithub, FaInstagram } from 'react-icons/fa';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { SiMysql } from "react-icons/si";
 
@@ -297,14 +297,18 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <p>&copy; 2024 Rohit Rayaan. All rights reserved.</p>
           <div className="flex justify-center items-center space-x-4 mt-4">
-            <a
-              href="https://www.instagram.com/rohitrayaan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:text-yellow-400 transition"
-            >
-              <Instagram className="inline-block" />
-            </a>
+          <a
+  href="https://www.instagram.com/rohitrayaan"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-3xl hover:text-yellow-400 transition"
+>
+  <FaInstagram className="inline-block" />
+</a>
+
+            <a href="https://github.com/starkryan" target="_blank" rel="noopener noreferrer">
+        <FaGithub size={30} className="text-gray-200 hover:text-black transition-colors duration-200" />
+      </a>
           </div>
           <div className="flex justify-center items-center space-x-2 mt-4">
             <span className="text-lg">Hosted on</span>

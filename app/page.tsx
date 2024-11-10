@@ -6,6 +6,12 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Instagram, Gift, Cake, Heart } from 'lucide-react'; // Import relevant icons
 import { useState } from 'react';
+import { RiNextjsFill } from 'react-icons/ri';
+import { DiLinux } from 'react-icons/di';
+import { FaNodeJs, FaReact, FaGithub } from 'react-icons/fa';
+import { TbBrandReactNative } from 'react-icons/tb';
+import { SiMysql } from "react-icons/si";
+
 
 export default function Home() {
   const [liked, setLiked] = useState(false); // State to track if the heart is liked
@@ -31,7 +37,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="container mx-auto flex justify-between items-center px-6">
+        <div className="container mx-auto flex justify-center items-center px-6 h-full">
           <div className="flex items-center space-x-4">
             <Image
               src="/logo.png"
@@ -40,16 +46,14 @@ export default function Home() {
               height={40}
               className="object-contain"
             />
-            <h1 className="text-xl font-poppins font-bold text-white">
-              Rohit Rayaan
-            </h1>
           </div>
         </div>
+
       </motion.header>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-48 text-center">
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-12">
           <div className="relative inline-block rounded-full p-[2px] bg-gradient-to-r from-pink-500 to-pink-300">
             <Image
               src="/author.jpg"
@@ -92,6 +96,16 @@ export default function Home() {
             <Heart size={36} />
           </button>
         </div>
+        <div className="flex justify-center space-x-4 text-3xl my-8">
+          <RiNextjsFill className="text-white" /> {/* Next.js - black */}
+          <DiLinux className="text-yellow-600" />   {/* Linux - yellow */}
+          <FaNodeJs className="text-green-600" />   {/* Node.js - green */}
+          <FaReact className="text-blue-500" />     {/* React - blue */}
+          <TbBrandReactNative className="text-blue-400" /> {/* React Native - light blue */}
+          <FaGithub className="text-gray-200" />    {/* GitHub - gray */}
+          <SiMysql className='text-blue-600' />
+        </div>
+
       </section>
 
       {/* About Section */}
@@ -109,9 +123,7 @@ export default function Home() {
           <p className="text-xl max-w-4xl mx-auto">
             I am a <strong>Mechanical Engineer</strong> by degree with a strong passion for <strong>Computer Science</strong>. Throughout my career, I have been fortunate to work with cutting-edge technologies, solve complex problems, and continuously adapt. My journey in engineering led me to web development, where I discovered my true passion for coding and creating digital solutions. I am always eager to explore new challenges and committed to learning, both as a developer and as an engineer.
           </p>
-          <p className="mt-4 text-xl">
-            My birthday is on <strong>26th May</strong>, and I love celebrating the special moments that life brings!
-          </p>
+
         </div>
       </section>
 
@@ -182,62 +194,64 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-<section id="experience" className="py-24 bg-gray-50">
-  <div className="container mx-auto text-center px-6">
-    <motion.h2
-      className="text-4xl font-semibold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-600"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      Experience
-    </motion.h2>
+      <section id="experience" className="py-24 bg-gray-900 text-gray-100">
+        <div className="container mx-auto text-center px-6">
+          <motion.h2
+            className="text-4xl font-semibold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-600"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Experience
+          </motion.h2>
 
-    <div className="space-y-12">
-      {/* Gabriel India Limited */}
-      <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
-        <div className="flex justify-center mb-6">
-          <Image
-            src="/gb.png"
-            alt="Gabriel India Limited"
-            width={150}
-            height={50}
-            className="object-contain"
-          />
-        </div>
-        <h3 className="text-2xl font-semibold mb-2 text-white">Gabriel India Limited</h3>
-        <p className="text-gray-400 italic">ANCA Operator | July 2022 - December 2023</p>
-        <ul className="list-disc text-left text-gray-300 mt-4 space-y-2">
-          <li>Operated ANCA machine tools to produce high-quality automotive parts.</li>
-          <li>Monitored machine performance and ensured product quality through regular checks.</li>
-          <li>Collaborated with engineering teams to optimize machine setups and workflows.</li>
-          <li>Trained junior operators and ensured adherence to safety and operational standards.</li>
-        </ul>
-      </div>
+          <div className="space-y-12">
+            {/* Gabriel India Limited */}
+            <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/gb.png"
+                  alt="Gabriel India Limited"
+                  width={150}
+                  height={50}
+                  className="object-contain rounded-full" // Use rounded-lg for slightly rounded corners
+                />
+              </div>
 
-      {/* DANA Private Limited */}
-      <div className="bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
-        <div className="flex justify-center mb-6">
-          <Image
-            src="/dana.jpg"
-            alt="DANA Private Limited"
-            width={150}
-            height={50}
-            className="object-contain"
-          />
+              <h3 className="text-2xl font-semibold mb-2 text-white">Gabriel India Limited</h3>
+              <p className="text-gray-400 italic">ANCA Operator | July 2022 - December 2023</p>
+              <ul className="list-disc text-left text-gray-300 mt-4 space-y-2">
+                <li>Operated ANCA machine tools to produce high-quality automotive parts.</li>
+                <li>Monitored machine performance and ensured product quality through regular checks.</li>
+                <li>Collaborated with engineering teams to optimize machine setups and workflows.</li>
+                <li>Trained junior operators and ensured adherence to safety and operational standards.</li>
+              </ul>
+            </div>
+
+            {/* DANA Private Limited */}
+            <div className="bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/dana.jpg"
+                  alt="DANA Private Limited"
+                  width={150}
+                  height={50}
+                  className="object-contain rounded-full" // Use rounded-lg for slightly rounded corners
+                />
+              </div>
+
+              <h3 className="text-2xl font-semibold mb-2 text-white">DANA Private Limited</h3>
+              <p className="text-gray-200 italic">ANCA Operator | January 2022</p>
+              <ul className="list-disc text-left text-gray-100 mt-4 space-y-2">
+                <li>Set up and operated ANCA CNC grinding machines for precision parts production.</li>
+                <li>Collaborated with the production team to troubleshoot issues and improve efficiency.</li>
+                <li>Consistently met production deadlines while maintaining high standards of product quality.</li>
+                <li>Utilized Lean Manufacturing principles to optimize workflows and reduce downtime.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <h3 className="text-2xl font-semibold mb-2 text-white">DANA Private Limited</h3>
-        <p className="text-gray-200 italic">ANCA Operator | January 2022</p>
-        <ul className="list-disc text-left text-gray-100 mt-4 space-y-2">
-          <li>Set up and operated ANCA CNC grinding machines for precision parts production.</li>
-          <li>Collaborated with the production team to troubleshoot issues and improve efficiency.</li>
-          <li>Consistently met production deadlines while maintaining high standards of product quality.</li>
-          <li>Utilized Lean Manufacturing principles to optimize workflows and reduce downtime.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Contact Section */}

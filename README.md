@@ -29,4 +29,4 @@ To set up and run the project locally, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/rohitrayaan/portfolio.git
+   git clone https://github.com/starkryan/rajule.git

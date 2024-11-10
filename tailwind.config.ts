@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ['Doto', 'Arial', 'sans-serif'],  // Add Doto font here
+        sans: ['Poppins', 'Arial', 'sans-serif'],  // Add Doto font here
       },
     },
   },

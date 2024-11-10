@@ -11,6 +11,7 @@ import { DiLinux } from 'react-icons/di';
 import { FaNodeJs, FaReact, FaGithub } from 'react-icons/fa';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { SiMysql } from "react-icons/si";
+import { SiShadcnui } from "react-icons/si";
 
 
 export default function Home() {
@@ -97,13 +98,33 @@ export default function Home() {
           </button>
         </div>
         <div className="flex justify-center space-x-4 text-3xl my-4">
-          <RiNextjsFill className="text-white" /> {/* Next.js - black */}
-          <DiLinux className="text-yellow-600" />   {/* Linux - yellow */}
-          <FaNodeJs className="text-green-600" />   {/* Node.js - green */}
-          <FaReact className="text-blue-500" />     {/* React - blue */}
-          <TbBrandReactNative className="text-blue-400" /> {/* React Native - light blue */}
-          <FaGithub className="text-gray-200" />    {/* GitHub - gray */}
-        </div>
+  <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">
+    <RiNextjsFill className="text-white" /> {/* Next.js - black */}
+  </a>
+  <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer">
+    <DiLinux className="text-yellow-600" /> {/* Linux - yellow */}
+  </a>
+  <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">
+    <FaNodeJs className="text-green-600" /> {/* Node.js - green */}
+  </a>
+  <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+    <FaReact className="text-blue-500" /> {/* React - blue */}
+  </a>
+  <a href="https://reactnative.dev" target="_blank" rel="noopener noreferrer">
+    <TbBrandReactNative className="text-blue-400" /> {/* React Native - light blue */}
+  </a>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+    <FaGithub className="text-gray-200" /> {/* GitHub - gray */}
+  </a>
+  <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer">
+    <SiMysql className="text-blue-600" /> {/* MySQL - blue */}
+  </a>
+  <a href="https://shadcn.dev" target="_blank" rel="noopener noreferrer">
+    <SiShadcnui className="text-sky-600" /> {/* Shadcn UI - sky */}
+  </a>
+</div>
+
+
       </section>
 
 

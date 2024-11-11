@@ -7,13 +7,14 @@ import { Instagram, Gift, Cake, Heart } from 'lucide-react'; // Import relevant 
 import { useState } from 'react';
 import { RiNextjsFill } from 'react-icons/ri';
 import { DiLinux } from 'react-icons/di';
-import { FaNodeJs, FaReact, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaNodeJs, FaReact, FaGithub, FaInstagram, FaDiscord } from 'react-icons/fa';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { SiMysql } from "react-icons/si";
+import { FaCrown } from "react-icons/fa";
 
 
 export default function Home() {
-  const [liked, setLiked] = useState(false); // State to track if the heart is liked
+  const [liked, setLiked] = useState(true); // State to track if the heart is liked
 
   const toggleLike = () => {
     setLiked(!liked); // Toggle the like state
@@ -56,8 +57,14 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-24 text-center">
+        
         <div className="flex justify-center mb-8">
-          <div className="relative inline-block rounded-full p-[2px] bg-gradient-to-r from-pink-500 to-pink-300">
+
+          <div className={`
+    relative inline-block rounded-full p-[2px]
+    bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-500 
+    animate-pulseGlowing
+  `}>
             <Image
               src="/author.webp"
               alt="Rohit Rayaan"
@@ -67,6 +74,25 @@ export default function Home() {
             />
           </div>
         </div>
+
+        <style jsx>{`
+  @keyframes pulseGlowing {
+    0% {
+      box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.8), 0 0 20px 5px rgba(138, 43, 226, 0.7), 0 0 30px 10px rgba(75, 0, 130, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 20px 10px rgba(255, 105, 180, 1), 0 0 30px 10px rgba(138, 43, 226, 0.9), 0 0 40px 15px rgba(75, 0, 130, 1);
+    }
+    100% {
+      box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.8), 0 0 20px 5px rgba(138, 43, 226, 0.7), 0 0 30px 10px rgba(75, 0, 130, 0.6);
+    }
+  }
+
+  .animate-pulseGlowing {
+    animation: pulseGlowing 3s infinite ease-in-out;
+  }
+`}</style>
+
         <div className="container mx-auto px-4">
           <h2 className="mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
             Hi, I'm
@@ -74,12 +100,11 @@ export default function Home() {
               Rohit Rayaan
             </span>
           </h2>
-
           <TypeAnimation
             sequence={[
               'A Mechanical Engineer.',
               2000,
-              'A Computer Science Enthusiast.',
+              'A Computer Geek.',
               2000,
               'A Web Developer.',
               2000,
@@ -88,6 +113,8 @@ export default function Home() {
             repeat={Infinity}
             className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text"
           />
+
+
         </div>
 
         {/* Like Button (Heart) */}
@@ -297,18 +324,18 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <p>&copy; 2024 Rohit Rayaan. All rights reserved.</p>
           <div className="flex justify-center items-center space-x-4 mt-4">
-          <a
-  href="https://www.instagram.com/rohitrayaan"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-3xl hover:text-yellow-400 transition"
->
-  <FaInstagram className="inline-block" />
-</a>
+            <a
+              href="https://www.instagram.com/rohitrayaan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl hover:text-yellow-400 transition"
+            >
+              <FaInstagram className="inline-block" />
+            </a>
 
             <a href="https://github.com/starkryan" target="_blank" rel="noopener noreferrer">
-        <FaGithub size={30} className="text-gray-200 hover:text-black transition-colors duration-200" />
-      </a>
+              <FaGithub size={30} className="text-gray-200 hover:text-black transition-colors duration-200" />
+            </a>
           </div>
           <div className="flex justify-center items-center space-x-2 mt-4">
             <span className="text-lg">Hosted on</span>

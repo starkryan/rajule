@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rohit Rayaan | Full-Stack Developer & Engineer",
     description: "Showcasing the work and achievements of Rohit Rayaan in web development, engineering, and computer science.",
-    url: "https://rrayaan.vercel.app/",
+    url: "https://www.rohitrayaan.in/",
     siteName: "Rohit Rayaan's Portfolio",
     images: [
       {
-        url: "https://yourwebsite.com/og-image.jpg",
+        url: "https://www.rohitrayaan.in/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Rohit Rayaan's Portfolio",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     site: "@rohitrayaan",
     title: "Rohit Rayaan | Full-Stack Developer & Engineer",
     description: "Explore the work of Rohit Rayaan, an engineer and full-stack developer with expertise in web development and mechanical engineering.",
-    images: ["https://yourwebsite.com/og-image.jpg"],
+    images: ["https://www.rohitrayaan.com/og-image.jpg"],
   },
 };
 

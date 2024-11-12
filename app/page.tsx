@@ -208,7 +208,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section >
       <div className="min-h-screen flex items-center justify-center bg-black text-green-500 font-mono">
         <div className="p-6 max-w-lg text-center space-y-6 border border-green-500 rounded-lg shadow-lg">
           <h1 className="text-4xl font-bold mb-4">The Matrix</h1>

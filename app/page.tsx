@@ -10,7 +10,8 @@ import { DiLinux } from 'react-icons/di';
 import { FaNodeJs, FaReact, FaGithub, FaInstagram, FaDiscord } from 'react-icons/fa';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { SiMysql } from "react-icons/si";
-import { FaCrown } from "react-icons/fa";
+import { SiTailwindcss } from "react-icons/si";
+import { AiOutlineCode, AiOutlineEye } from 'react-icons/ai';
 
 
 export default function Home() {
@@ -57,7 +58,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-24 text-center">
-        
+
         <div className="flex justify-center mb-8">
 
           <div className={`
@@ -108,6 +109,8 @@ export default function Home() {
               2000,
               'A Web Developer.',
               2000,
+              'A Linux Administrator.',
+              2000,
             ]}
             speed={50}
             repeat={Infinity}
@@ -148,6 +151,7 @@ export default function Home() {
           <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer">
             <SiMysql className="text-blue-600" /> {/* MySQL - blue */}
           </a>
+
 
         </div>
 
@@ -190,7 +194,7 @@ export default function Home() {
             <p className="text-xl sm:text-2xl">Celebrate my special day with me! 🎂</p>
             <Gift className="text-4xl" />
           </div>
-          <p className="mt-4 text-lg">My birthday is on <strong>26th May</strong>. Feel free to drop a message or just wish me on my special day!</p>
+          <p className="mt-4 text-lg"><strong>26th May</strong></p>
           <div className="flex justify-center items-center space-x-4 mt-4">
             <a
               href="https://www.instagram.com/rohitrayaan"
@@ -204,8 +208,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Other Sections remain the same */}
-
+      <section>
+      <div className="min-h-screen flex items-center justify-center bg-black text-green-500 font-mono">
+        <div className="p-6 max-w-lg text-center space-y-6 border border-green-500 rounded-lg shadow-lg">
+          <h1 className="text-4xl font-bold mb-4">The Matrix</h1>
+          <div className="text-lg leading-relaxed">
+            <TypeAnimation
+              sequence={[
+                'Neo, do you want to know what the Matrix is?', // Types text
+                2000, // Waits 2 seconds
+                'The Matrix is everywhere, it is all around us...', // Types new text
+                2000,
+              ]}
+              wrapper="p"
+              cursor={true}
+              repeat={Infinity}
+              speed={50}
+            />
+          </div>
+          <div className="flex space-x-4 justify-center mt-6">
+            <button className="flex items-center space-x-2 bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300">
+              <AiOutlineCode className="text-2xl" />
+              <span>Red Pill</span>
+            </button>
+            <button className="flex items-center space-x-2 bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300">
+              <AiOutlineEye className="text-2xl" />
+              <span>Blue Pill</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
       {/* Education Section */}
       <section id="education" className="py-24 bg-gray-900 text-gray-100">
         <div className="container mx-auto text-center px-6">
@@ -358,3 +391,5 @@ export default function Home() {
     </div>
   );
 }
+
+

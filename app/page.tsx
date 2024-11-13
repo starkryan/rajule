@@ -2,7 +2,7 @@
 import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Instagram, Gift, Cake, Heart } from 'lucide-react'; // Import relevant icons
+import { Instagram, Gift, Cake, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { RiNextjsFill } from 'react-icons/ri';
 import { DiLinux } from 'react-icons/di';

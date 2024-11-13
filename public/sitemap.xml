@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.rohitrayaan.in/</loc>
-    <lastmod>2024-11-12</lastmod> <!-- Update this to the current date -->
+    <lastmod>2024-11-13</lastmod> <!-- Update this to the current date -->
     <changefreq>daily</changefreq> <!-- Change frequency (adjust if necessary) -->
     <priority>1.0</priority> <!-- High priority since it's the main page -->
   </url>

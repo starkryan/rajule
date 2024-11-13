@@ -1,6 +1,5 @@
 "use client";
 import { TypeAnimation } from 'react-type-animation';
-import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Instagram, Gift, Cake, Heart } from 'lucide-react'; // Import relevant icons
@@ -23,14 +22,7 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-black text-gray-100">
-      <Head>
-        <title>Rohit Rayaan - Portfolio</title>
-        <meta name="description" content="Welcome to my portfolio" />
-        <meta name="author" content="Rohit Rayaan" />
-        <meta name="keywords" content="Rohit Rayaan, Portfolio, Mechanical Engineer, Web Developer, Computer Science" />
-        <link rel="icon" href="/favicon.ico" />
-
-      </Head>
+      
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Doto:wght,ROND@800,4&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
       </style>

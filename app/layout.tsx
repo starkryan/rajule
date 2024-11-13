@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Rohit Rayaan | Full-Stack Developer & Engineer",
     description: "Showcasing the work and achievements of Rohit Rayaan in web development, engineering, and computer science.",
     url: "https://www.rohitrayaan.in/",
-    siteName: "Rohit Rayaan's Portfolio",
+    siteName: "Rohit Rayaan",
     images: [
       {
         url: "https://www.rohitrayaan.in/og-image.jpg",
@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     description: "Explore the work of Rohit Rayaan, an engineer and full-stack developer with expertise in web development and mechanical engineering.",
     images: ["https://www.rohitrayaan.com/og-image.jpg"],
   },
+  icons: {
+    icon: "/favicon.ico", // Add favicon path here
+  },
 };
 
 // Separate viewport export
@@ -55,9 +58,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

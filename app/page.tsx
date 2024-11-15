@@ -6,11 +6,12 @@ import { Instagram, Gift, Cake, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { RiNextjsFill } from 'react-icons/ri';
 import { DiLinux } from 'react-icons/di';
-import { FaNodeJs, FaReact, FaGithub, FaInstagram, FaDiscord } from 'react-icons/fa';
+import { FaNodeJs, FaReact, FaGithub, FaInstagram, FaDiscord, FaHtml5, FaJs, FaGit, FaUbuntu, FaAndroid } from 'react-icons/fa';
 import { TbBrandReactNative } from 'react-icons/tb';
-import { SiMysql } from "react-icons/si";
+import { SiMysql, SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { AiOutlineCode, AiOutlineEye } from 'react-icons/ai';
+import { FaCss3Alt } from 'react-icons/fa6';
 
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-black text-gray-100">
-      
+
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Doto:wght,ROND@800,4&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
       </style>
@@ -122,30 +123,95 @@ export default function Home() {
           </button>
         </div>
         <div className="flex justify-center space-x-4 text-3xl my-4">
-          <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">
-            <RiNextjsFill className="text-white" /> {/* Next.js - black */}
-          </a>
-          <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer">
-            <DiLinux className="text-yellow-600" /> {/* Linux - yellow */}
-          </a>
-          <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">
-            <FaNodeJs className="text-green-600" /> {/* Node.js - green */}
-          </a>
-          <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            <FaReact className="text-blue-500" /> {/* React - blue */}
-          </a>
-          <a href="https://reactnative.dev" target="_blank" rel="noopener noreferrer">
-            <TbBrandReactNative className="text-blue-400" /> {/* React Native - light blue */}
-          </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="text-gray-200" /> {/* GitHub - gray */}
-          </a>
-          <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer">
-            <SiMysql className="text-blue-600" /> {/* MySQL - blue */}
-          </a>
+  <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn">
+    <RiNextjsFill className="text-white transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-100">
+    <DiLinux className="text-yellow-600 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-200">
+    <FaNodeJs className="text-green-600 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-300">
+    <FaReact className="text-blue-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://reactnative.dev" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-400">
+    <TbBrandReactNative className="text-blue-400 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-500">
+    <FaGithub className="text-gray-200 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-600">
+    <SiMysql className="text-yellow-600 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+</div>
+
+<div className="flex justify-center space-x-4 text-3xl my-4">
+  <a href="https://www.w3.org/html/" target="_blank" rel="noopener noreferrer" className="animate-slideIn">
+    <FaHtml5 className="text-orange-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-100">
+    <FaCss3Alt className="text-blue-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-200">
+    <FaJs className="text-yellow-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://www.android.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-300">
+    <FaAndroid className="text-green-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-400">
+    <FaGit className="text-red-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://ubuntu.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-500">
+    <FaUbuntu className="text-orange-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+  <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-600">
+    <SiTailwindcss className="text-cyan-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+  </a>
+</div>
+
+<style jsx>{`
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+`}</style>
 
 
-        </div>
 
 
       </section>
@@ -201,36 +267,36 @@ export default function Home() {
       </section>
 
       <section >
-      <div className="min-h-screen flex items-center justify-center bg-black text-green-500 font-mono">
-        <div className="p-6 max-w-lg text-center space-y-6 border border-green-500 rounded-lg shadow-lg">
-          <h1 className="text-4xl font-bold mb-4">The Matrix</h1>
-          <div className="text-lg leading-relaxed">
-            <TypeAnimation
-              sequence={[
-                'Neo, do you want to know what the Matrix is?', // Types text
-                2000, // Waits 2 seconds
-                'The Matrix is everywhere, it is all around us...', // Types new text
-                2000,
-              ]}
-              wrapper="p"
-              cursor={true}
-              repeat={Infinity}
-              speed={50}
-            />
-          </div>
-          <div className="flex space-x-4 justify-center mt-6">
-            <button className="flex items-center space-x-2 bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300">
-              <AiOutlineCode className="text-2xl" />
-              <span>Red Pill</span>
-            </button>
-            <button className="flex items-center space-x-2 bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300">
-              <AiOutlineEye className="text-2xl" />
-              <span>Blue Pill</span>
-            </button>
+        <div className="min-h-screen flex items-center justify-center bg-black text-green-500 font-mono">
+          <div className="p-6 max-w-lg text-center space-y-6 border border-green-500 rounded-lg shadow-lg">
+            <h1 className="text-4xl font-bold mb-4">The Matrix</h1>
+            <div className="text-lg leading-relaxed">
+              <TypeAnimation
+                sequence={[
+                  'Neo, do you want to know what the Matrix is?', // Types text
+                  2000, // Waits 2 seconds
+                  'The Matrix is everywhere, it is all around us...', // Types new text
+                  2000,
+                ]}
+                wrapper="p"
+                cursor={true}
+                repeat={Infinity}
+                speed={50}
+              />
+            </div>
+            <div className="flex space-x-4 justify-center mt-6">
+              <button className="flex items-center space-x-2 bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300">
+                <AiOutlineCode className="text-2xl" />
+                <span>Red Pill</span>
+              </button>
+              <button className="flex items-center space-x-2 bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300">
+                <AiOutlineEye className="text-2xl" />
+                <span>Blue Pill</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
       {/* Education Section */}
       <section id="education" className="py-24 bg-gray-900 text-gray-100">
         <div className="container mx-auto text-center px-6">
@@ -353,9 +419,17 @@ export default function Home() {
               href="https://www.instagram.com/rohitrayaan"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl hover:text-yellow-400 transition"
+              className="text-3xl hover:text-pink-400 transition"
             >
-              <FaInstagram className="inline-block" />
+              <FaInstagram className="inline-block text-pink-600" />
+            </a>
+            <a
+              href="https://www.discord.com/users/johnwicks#0001"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl hover:text-pink-400 transition"
+            >
+              <FaDiscord className="inline-block text-blue-600" />
             </a>
 
             <a href="https://github.com/starkryan" target="_blank" rel="noopener noreferrer">

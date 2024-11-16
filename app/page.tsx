@@ -69,24 +69,6 @@ export default function Home() {
           </div>
         </div>
 
-        <style jsx>{`
-  @keyframes pulseGlowing {
-    0% {
-      box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.8), 0 0 20px 5px rgba(138, 43, 226, 0.7), 0 0 30px 10px rgba(75, 0, 130, 0.6);
-    }
-    50% {
-      box-shadow: 0 0 20px 10px rgba(255, 105, 180, 1), 0 0 30px 10px rgba(138, 43, 226, 0.9), 0 0 40px 15px rgba(75, 0, 130, 1);
-    }
-    100% {
-      box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.8), 0 0 20px 5px rgba(138, 43, 226, 0.7), 0 0 30px 10px rgba(75, 0, 130, 0.6);
-    }
-  }
-
-  .animate-pulseGlowing {
-    animation: pulseGlowing 3s infinite ease-in-out;
-  }
-`}</style>
-
         <div className="container mx-auto px-4">
           <h2 className="mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
             Hi, I'm
@@ -123,54 +105,54 @@ export default function Home() {
           </button>
         </div>
         <div className="flex justify-center space-x-4 text-3xl my-4">
-  <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn">
-    <RiNextjsFill className="text-white transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-100">
-    <DiLinux className="text-yellow-600 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-200">
-    <FaNodeJs className="text-green-600 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-300">
-    <FaReact className="text-blue-500 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://reactnative.dev" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-400">
-    <TbBrandReactNative className="text-blue-400 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-500">
-    <FaGithub className="text-gray-200 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-600">
-    <SiMysql className="text-yellow-600 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-</div>
+          <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn">
+            <RiNextjsFill className="text-white transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-100">
+            <DiLinux className="text-yellow-600 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-200">
+            <FaNodeJs className="text-green-600 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-300">
+            <FaReact className="text-blue-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://reactnative.dev" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-400">
+            <TbBrandReactNative className="text-blue-400 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-500">
+            <FaGithub className="text-gray-200 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-600">
+            <SiMysql className="text-yellow-600 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+        </div>
 
-<div className="flex justify-center space-x-4 text-3xl my-4">
-  <a href="https://www.w3.org/html/" target="_blank" rel="noopener noreferrer" className="animate-slideIn">
-    <FaHtml5 className="text-orange-500 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-100">
-    <FaCss3Alt className="text-blue-500 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-200">
-    <FaJs className="text-yellow-500 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://www.android.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-300">
-    <FaAndroid className="text-green-500 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-400">
-    <FaGit className="text-red-500 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://ubuntu.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-500">
-    <FaUbuntu className="text-orange-500 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-  <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-600">
-    <SiTailwindcss className="text-cyan-500 transform transition-transform hover:scale-110 hover:rotate-12" />
-  </a>
-</div>
+        <div className="flex justify-center space-x-4 text-3xl my-4">
+          <a href="https://www.w3.org/html/" target="_blank" rel="noopener noreferrer" className="animate-slideIn">
+            <FaHtml5 className="text-orange-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-100">
+            <FaCss3Alt className="text-blue-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-200">
+            <FaJs className="text-yellow-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://www.android.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-300">
+            <FaAndroid className="text-green-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-400">
+            <FaGit className="text-red-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://ubuntu.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-500">
+            <FaUbuntu className="text-orange-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="animate-slideIn animation-delay-600">
+            <SiTailwindcss className="text-cyan-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+        </div>
 
-<style jsx>{`
+        <style jsx>{`
   @keyframes slideIn {
     0% {
       transform: translateX(100px);

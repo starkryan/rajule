@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Head from "next/head"; // Import next/head
 import "./globals.css";
 
 // Importing custom fonts
@@ -48,31 +49,34 @@ export const metadata: Metadata = {
     title: "Rohit Rayaan | Full-Stack Developer & Engineer",
     description:
       "Explore the work of Rohit Rayaan, an engineer and full-stack developer with expertise in web development and mechanical engineering.",
-    images: ["https://www.rohitrayaan.com/og-image.jpg"],
+    images: ["https://www.rohitrayaan.in/og-image.jpg"],
   },
   robots: {
-    index: true, // Allow search engines to index
-    follow: true, // Allow search engines to follow links
+    index: true,
+    follow: true,
   },
   icons: {
-    icon: "/favicon.ico", // Path to favicon
+    icon: "/favicon.ico",
   },
 };
 
 // Structured data (JSON-LD) for better SEO and rich results
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Rohit Rayaan",
-  "jobTitle": "Full-Stack Developer & Engineer",
-  "url": "https://www.rohitrayaan.in",
-  "image": "https://www.rohitrayaan.in/og-image.jpg",
-  "sameAs": [
-    "https://twitter.com/rohitrayaan",
-    "https://www.linkedin.com/in/rohitrayaan",
-    "https://github.com/starkryan", // Ensure the GitHub URL is correct
-  ],
-};
+const StructuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rohit Rayaan",
+    "jobTitle": "Full-Stack Developer & Engineer",
+    "url": "https://www.rohitrayaan.in",
+    "image": "https://www.rohitrayaan.in/og-image.jpg",
+    "sameAs": [
+      "https://www.instagram.com/rohitrayaan/",
+      "https://github.com/starkryan"
+    ],
+    "description":
+      "A skilled full-stack developer and mechanical engineer specializing in web development, computer science, and engineering.",
+  }
+];
 
 export default function RootLayout({
   children,
@@ -80,29 +84,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        {/* Metadata and favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        {/* Google Analytics (optional but recommended for tracking) */}
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ID"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'YOUR_ID');
-        </script> */}
-        {/* Structured Data for Google */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
-          }}
-        />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
+    <>
+      <html lang="en">
+        <Head>
+          {/* Metadata and favicon */}
+          <link rel="icon" href="/favicon.ico" />
+          {/* Canonical link */}
+          <link rel="canonical" href="https://www.rohitrayaan.in/" />
+          {/* Structured Data for Google */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(StructuredData),
+            }}
+          />
+        </Head>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          {children}
+        </body>
+      </html>
+    </>
   );
 }

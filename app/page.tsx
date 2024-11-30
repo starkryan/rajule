@@ -100,11 +100,27 @@ export default function Home() {
         <div className="mt-4 flex justify-center">
           <button
             onClick={toggleLike}
-            className={`p-2 transition-colors duration-200 ${liked ? 'text-red-500' : 'text-gray-400'}`}
+            className={`p-2 transition-colors duration-200 ${liked ? 'text-red-500 beat' : 'text-gray-400'}`}
           >
-            <Heart size={36} />
+            <Heart size={40} />
           </button>
         </div>
+
+        <style jsx>{`
+  .beat {
+    animation: beat 0.6s infinite;
+  }
+
+  @keyframes beat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+`}</style>
+
         <div className="flex justify-center space-x-4 text-3xl my-4">
           <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn">
             <RiNextjsFill className="text-white transform transition-transform hover:scale-110 hover:rotate-12" />

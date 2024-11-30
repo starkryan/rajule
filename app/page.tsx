@@ -1,4 +1,5 @@
 "use client";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -197,6 +198,7 @@ export default function Home() {
 
 
       </section>
+      <SpeedInsights />
 
 
       {/* About Section */}
@@ -216,6 +218,33 @@ export default function Home() {
           </p>
 
         </div>
+        <div className="container mx-auto text-center px-6 mt-12">
+          {/* Profile Image with Link */}
+          <a href="https://hexageeky.com" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/hexgeeky.png"
+              alt="HexaGeeky Logo"
+              width={100}
+              height={100}
+              className="mx-auto rounded-full"
+            />
+          </a>
+
+          {/* Text and Link */}
+          <p className="mt-4 text-lg text-center">
+            I write tech blogs at
+            <a
+              href="https://hexageeky.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline font-semibold ml-1"
+            >
+              hexageeky.com
+            </a>
+          </p>
+        </div>
+
+
       </section>
 
       {/* Birthday Section with Icon */}
@@ -250,7 +279,7 @@ export default function Home() {
 
       <section >
         <div className="min-h-screen flex items-center justify-center bg-black text-green-500 font-mono">
-          <div className="p-6 max-w-lg text-center space-y-6 border border-green-500 rounded-lg shadow-lg">
+          <div className="p-4 max-w-lg text-center space-y-6 border border-green-500 rounded-lg shadow-lg">
             <h1 className="text-4xl font-bold mb-4">The Matrix</h1>
             <div className="text-lg leading-relaxed">
               <TypeAnimation

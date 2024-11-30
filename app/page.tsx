@@ -13,13 +13,17 @@ import { SiMysql, SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { AiOutlineCode, AiOutlineEye } from 'react-icons/ai';
 import { FaCss3Alt } from 'react-icons/fa6';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Home() {
   const [liked, setLiked] = useState(true); // State to track if the heart is liked
 
   const toggleLike = () => {
-    setLiked(!liked); // Toggle the like state
+    setLiked(!liked); 
+    if (liked) toast.error('Dont stop my HeartBeat!'); 
+    else toast.success('My HeartBeat is Ticking!'); // Toggle the like state
   };
 
   return (
@@ -98,28 +102,43 @@ export default function Home() {
 
         {/* Like Button (Heart) */}
         <div className="mt-4 flex justify-center">
-          <button
-            onClick={toggleLike}
-            className={`p-2 transition-colors duration-200 ${liked ? 'text-red-500 beat' : 'text-gray-400'}`}
-          >
-            <Heart size={40} />
-          </button>
-        </div>
+        <button
+          onClick={toggleLike}
+          className={`p-2 transition-colors duration-200 ${liked ? 'text-red-500 beat' : 'text-gray-400'}`}
+        >
+          <Heart size={40} />
+        </button>
+      </div>
 
-        <style jsx>{`
-  .beat {
-    animation: beat 0.6s infinite;
-  }
+      {/* Toast container */}
+      <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
 
-  @keyframes beat {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-  }
-`}</style>
+/>
+
+      <style jsx>{`
+        .beat {
+          animation: beat 0.6s infinite;
+        }
+
+        @keyframes beat {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.2);
+          }
+        }
+      `}</style>
 
         <div className="flex justify-center space-x-4 text-3xl my-4">
           <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn">

@@ -290,14 +290,7 @@ export default function Home() {
           >
             <FaWordpress className="text-white-500 transform transition-transform hover:scale-110 hover:rotate-12" />
           </a>
-          <a
-            href="https://wordpress.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="animate-slideIn animation-delay-600"
-          >
-            <SiPostman className="text-orange-600 transform transition-transform hover:scale-110 hover:rotate-12" />
-          </a>
+          
         </div>
 
         <style jsx>{`

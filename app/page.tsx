@@ -41,7 +41,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Navbar/>
+        <Navbar />
 
       </motion.header>
 
@@ -56,7 +56,7 @@ export default function Home() {
     animate-pulseGlowing
   `}>
             <Image
-              src="/author.webp"
+              src="/author.jpg"
               alt="Rohit Rayaan"
               className="rounded-full h-48 w-48 sm:h-56 sm:w-56 lg:h-64 lg:w-64"
               height={500}
@@ -130,6 +130,18 @@ export default function Home() {
           }
         }
       `}</style>
+
+        {/* TECH STACK */}
+        <div className="flex justify-center items-center">
+          <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-pink-500"></div>
+        </div>
+        <div className="flex justify-center items-center">
+          <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-4xl my-4">
+            TECH STACK
+          </h1>
+        </div>
+
+
 
         <div className="flex justify-center space-x-4 text-3xl my-4">
           <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="animate-slideIn">

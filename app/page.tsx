@@ -27,6 +27,7 @@ import { FaCss3Alt } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./navbar";
+import WhatsAppButton from "./WhatsappButton";
 
 
 export default function Home() {
@@ -54,6 +55,7 @@ export default function Home() {
       >
         <Navbar />
       </motion.header>
+      <WhatsAppButton/>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-24 text-center">
@@ -647,8 +649,10 @@ export default function Home() {
       {/* Footer Section */}
       <footer className="bg-gray-900 text-white py-6">
         <div className="container mx-auto text-center">
-          <p>&copy; 2024 Rohit Rayaan. All rights reserved.</p>
+        <p className="text-lg mb-4">Follow me on</p>
+          
           <div className="flex justify-center items-center space-x-4 mt-4">
+            
             <a
               href="https://www.instagram.com/rohitrayaan"
               target="_blank"
@@ -693,6 +697,7 @@ export default function Home() {
               <span className="text-lg">Vercel</span>
             </a>
           </div>
+          <p className="mt-4 text-sm">&copy; 2024 Rohit Rayaan. All rights reserved.</p>
         </div>
       </footer>
     </div>

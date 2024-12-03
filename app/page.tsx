@@ -17,6 +17,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "./navbar";
 
+
 export default function Home() {
   const [liked, setLiked] = useState(true); // State to track if the heart is liked
 
@@ -273,7 +274,7 @@ export default function Home() {
       </section>
 
       {/* Birthday Section with Icon */}
-      <section id="birthday" className="py-12 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-center">
+      <section id="birthday" className="py-12 bg-gradient-to-r from-black via-gray-400  to-black text-white text-center">
         <div className="container mx-auto px-6">
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4"
@@ -381,7 +382,7 @@ export default function Home() {
 
           <div className="space-y-12">
             {/* Gabriel India Limited */}
-            <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
+            <div className="bg-gray-800 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
               <div className="flex justify-center mb-6">
                 <Image
                   src="/gb.png"
@@ -403,7 +404,7 @@ export default function Home() {
             </div>
 
             {/* DANA Private Limited */}
-            <div className="bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
+            <div className="bg-gray-800 p-8 shadow-lg rounded-xl transform transition-all hover:scale-105 hover:shadow-xl">
               <div className="flex justify-center mb-6">
                 <Image
                   src="/dana.jpg"

@@ -69,46 +69,69 @@ export const metadata: Metadata = {
     images: ["https://www.rohitrayaan.in/og-image.jpg"],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: "index",
+    follow: "follow",
   },
   icons: {
     icon: "/favicon.ico",
   },
-  // Structured Data (JSON-LD) for better SEO and rich results
-  other: [
-    {
-      type: "application/ld+json",
-      content: JSON.stringify([
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Rohit Rayaan",
-          "jobTitle": "Full-Stack Developer & Engineer",
-          "url": "https://www.rohitrayaan.in",
-          "image": "https://www.rohitrayaan.in/og-image.jpg",
-          "sameAs": [
-            "https://www.instagram.com/rohitrayaan/",
-            "https://github.com/starkryan",
-          ],
-          "description":
-            "A skilled full-stack developer and mechanical engineer specializing in web development, computer science, and engineering.",
-          "additionalType": "http://schema.org/Person",
-          "mainEntityOfPage": "https://www.rohitrayaan.in",
-        },
-      ]),
-    },
-  ],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <head>
+        <title>Rohit Rayaan | Full-Stack Developer & Engineer</title>
+        <meta name="description" content="Explore the portfolio of Rohit Rayaan, a full-stack developer and engineer skilled in web development, mechanical engineering, and computer science." />
+        <meta name="keywords" content="Rohit Rayaan, Full-Stack Developer, Web Developer, Mechanical Engineer, Portfolio, JavaScript, React Developer, Node.js, Next.js Developer, TypeScript, GraphQL, Web Development, Engineering Portfolio, Tech Portfolio, Frontend Developer, Backend Developer, Software Engineer, UI/UX Design, Machine Learning, Artificial Intelligence, Python Developer, Cloud Computing, Mobile App Development" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Rohit Rayaan | Full-Stack Developer & Engineer" />
+        <meta property="og:description" content="Showcasing the work and achievements of Rohit Rayaan in web development, engineering, and computer science." />
+        <meta property="og:url" content="https://www.rohitrayaan.in" />
+        <meta property="og:site_name" content="Rohit Rayaan" />
+        <meta property="og:image" content="https://www.rohitrayaan.in/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@rohitrayaan" />
+        <meta name="twitter:title" content="Rohit Rayaan | Full-Stack Developer & Engineer" />
+        <meta name="twitter:description" content="Explore the work of Rohit Rayaan, an engineer and full-stack developer with expertise in web development and mechanical engineering." />
+        <meta name="twitter:image" content="https://www.rohitrayaan.in/og-image.jpg" />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Rohit Rayaan",
+              jobTitle: "Full-Stack Developer & Engineer",
+              url: "https://www.rohitrayaan.in",
+              image: "https://www.rohitrayaan.in/og-image.jpg",
+              sameAs: [
+                "https://www.instagram.com/rohitrayaan/",
+                "https://github.com/starkryan",
+              ],
+              description:
+                "A skilled full-stack developer and mechanical engineer specializing in web development, computer science, and engineering.",
+              additionalType: "http://schema.org/Person",
+              mainEntityOfPage: "https://www.rohitrayaan.in",
+            }),
+          }}
+        />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

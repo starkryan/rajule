@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Instagram, Gift, Cake, Heart } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { RiNextjsFill } from "react-icons/ri";
 import { DiLinux } from "react-icons/di";
 import {
@@ -27,6 +27,7 @@ import { FaCss3Alt } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./navbar";
+
 
 export default function Home() {
   const [liked, setLiked] = useState(true); // State to track if the heart is liked
@@ -158,6 +159,10 @@ export default function Home() {
         <div className="flex justify-center items-center">
           <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-pink-500"></div>
         </div>
+
+       
+
+       
 
         {/* TECH STACK */}
         <div className="flex justify-center items-center">
@@ -422,8 +427,8 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="min-h-screen flex items-center justify-center bg-black text-green-500 font-mono">
-          <div className="p-4 max-w-lg text-center space-y-6 border border-green-500 rounded-lg shadow-lg">
+        <div className="flex items-center justify-center bg-black text-green-500 font-mono mt-10 py-12">
+          <div className="p-4 max-w-lg text-center  rounded-lg shadow-lg">
             <h1 className="text-4xl font-bold mb-4">The Matrix</h1>
             <div className="text-lg leading-relaxed">
               <TypeAnimation
@@ -431,6 +436,12 @@ export default function Home() {
                   "Neo, do you want to know what the Matrix is?", // Types text
                   2000, // Waits 2 seconds
                   "The Matrix is everywhere, it is all around us...", // Types new text
+                  2000,
+                  "It is the world that has been pulled over your eyes to blind you from the truth.",
+                  2000,
+                  "You take the red pill—you stay in Wonderland...",
+                  2000,
+                  "And I show you how deep the rabbit hole goes.",
                   2000,
                 ]}
                 wrapper="p"

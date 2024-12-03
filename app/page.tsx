@@ -18,9 +18,10 @@ import {
   FaGit,
   FaUbuntu,
   FaAndroid,
+  FaWordpress,
 } from "react-icons/fa";
 import { TbBrandReactNative } from "react-icons/tb";
-import { SiMysql, SiNextdotjs } from "react-icons/si";
+import { SiMysql, SiNextdotjs, SiPostman } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { AiOutlineCode, AiOutlineEye } from "react-icons/ai";
 import { FaCss3Alt } from "react-icons/fa6";
@@ -282,12 +283,20 @@ export default function Home() {
             <FaUbuntu className="text-orange-500 transform transition-transform hover:scale-110 hover:rotate-12" />
           </a>
           <a
-            href="https://tailwindcss.com/"
+            href="https://wordpress.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="animate-slideIn animation-delay-600"
           >
-            <SiTailwindcss className="text-cyan-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+            <FaWordpress className="text-white-500 transform transition-transform hover:scale-110 hover:rotate-12" />
+          </a>
+          <a
+            href="https://wordpress.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="animate-slideIn animation-delay-600"
+          >
+            <SiPostman className="text-orange-600 transform transition-transform hover:scale-110 hover:rotate-12" />
           </a>
         </div>
 

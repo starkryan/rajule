@@ -15,14 +15,14 @@ import { AiOutlineCode, AiOutlineEye } from 'react-icons/ai';
 import { FaCss3Alt } from 'react-icons/fa6';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Navbar from "./navbar";
 
 export default function Home() {
   const [liked, setLiked] = useState(true); // State to track if the heart is liked
 
   const toggleLike = () => {
-    setLiked(!liked); 
-    if (liked) toast.error('Dont stop my HeartBeat!'); 
+    setLiked(!liked);
+    if (liked) toast.error('Dont stop my HeartBeat!');
     else toast.success('My HeartBeat is Ticking!'); // Toggle the like state
   };
 
@@ -40,17 +40,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="container mx-auto flex justify-center items-center px-6 h-full">
-          <div className="flex items-center space-x-4">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
-          </div>
-        </div>
+        <Navbar/>
 
       </motion.header>
 
@@ -102,30 +92,30 @@ export default function Home() {
 
         {/* Like Button (Heart) */}
         <div className="mt-4 flex justify-center">
-        <button
-          onClick={toggleLike}
-          className={`p-2 transition-colors duration-200 ${liked ? 'text-red-500 beat' : 'text-gray-400'}`}
-        >
-          <Heart size={40} />
-        </button>
-      </div>
+          <button
+            onClick={toggleLike}
+            className={`p-2 transition-colors duration-200 ${liked ? 'text-red-500 beat' : 'text-gray-400'}`}
+          >
+            <Heart size={40} />
+          </button>
+        </div>
 
-      {/* Toast container */}
-      <ToastContainer
-position="top-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
+        {/* Toast container */}
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
 
-/>
+        />
 
-      <style jsx>{`
+        <style jsx>{`
         .beat {
           animation: beat 0.6s infinite;
         }

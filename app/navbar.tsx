@@ -1,133 +1,86 @@
 import { useState } from "react";
 import Image from "next/image";
-
+import { Menu, X } from "lucide-react";
+import { SiBuymeacoffee } from "react-icons/si";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <nav className="bg-dark dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image
-            src="/logo.png"
-            className="h-8"
-            alt="Logo"
-            width={32}
-            height={32}
-          />
-          
+    <nav className="bg-gray-900 text-white fixed w-full z-20 top-0 left-0 border-b border-gray-700 shadow-md">
+      <div className="max-w-screen-xl flex items-center justify-between p-4 mx-auto">
+        {/* Logo Section */}
+        <a href="/" className="flex items-center space-x-2">
+          <Image src="/logo.png" alt="Logo" width={32} height={32} />
+         
         </a>
 
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-pink-600 dark:hover:bg-pink-500 dark:focus:ring-blue-800"
-          >
-            Get started
-          </button>
-          <button
-            onClick={toggleMenu}
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-sticky"
-            aria-expanded={isMenuOpen ? "true" : "false"}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={isMenuOpen ? "M1 1h15M1 7h15M1 13h15" : "M1 1h15M1 7h15M1 13h15"}
-              />
-            </svg>
-          </button>
-        </div>
-
-        {/* Desktop Menu */}
-        <div
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } items-center justify-between hidden w-full md:flex md:w-auto md:order-1`}
-          id="navbar-sticky"
+        {/* Buy Me a Coffee Button for Mobile */}
+        <a
+          href="https://www.buymeacoffee.com/yourlink"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex md:hidden items-center bg-yellow-500 hover:bg-yellow-600 text-xs font-medium py-1 px-2 rounded-lg transition-colors space-x-1 sm:py-2 sm:px-3 sm:text-sm sm:space-x-2"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
+          <SiBuymeacoffee className="w-4 h-4 sm:w-5 sm:h-5" />
+          <span>Buy Me a Coffee</span>
+        </a>
+
+        {/* Mobile Menu Toggle Button */}
+        <button
+          onClick={toggleMenu}
+          type="button"
+          className="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-600 rounded"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        >
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+        {/* Menu Items (Visible on Desktop) */}
+        <ul className="hidden md:flex space-x-6 font-medium">
+          {["Home", "About", "Services", "Contact"].map((item) => (
+            <li key={item}>
               <a
-                href="#"
-                className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                aria-current="page"
+                href={`#${item.toLowerCase()}`}
+                className="hover:text-blue-500 transition-colors"
               >
-                Home
+                {item}
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+          ))}
+        </ul>
+
+        {/* Buy Me a Coffee Button for Desktop */}
+        <a
+          href="https://www.buymeacoffee.com/yourlink"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-sm font-medium py-2 px-4 rounded-lg transition-colors space-x-2"
+        >
+          <SiBuymeacoffee className="w-5 h-5" />
+          <span>Buy Me a Coffee</span>
+        </a>
       </div>
 
       {/* Mobile Menu */}
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden bg-gray-800 text-white p-4 space-y-4`}
+        } md:hidden bg-gray-800 text-white p-4 space-y-2 border-t border-gray-700`}
       >
-        <ul className="space-y-4">
-          <li>
-            <a href="#" className="block py-2 px-3 text-white hover:bg-gray-700">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block py-2 px-3 text-white hover:bg-gray-700">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block py-2 px-3 text-white hover:bg-gray-700">
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block py-2 px-3 text-white hover:bg-gray-700">
-              Contact
-            </a>
-          </li>
+        <ul className="space-y-2">
+          {["Home", "About", "Services", "Contact"].map((item) => (
+            <li key={item}>
+              <a
+                href={`#${item.toLowerCase()}`}
+                className="block py-2 px-3 hover:bg-gray-700 rounded transition-colors"
+              >
+                {item}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

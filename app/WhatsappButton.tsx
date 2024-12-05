@@ -5,47 +5,24 @@ import { FaWhatsapp } from "react-icons/fa";
 const WhatsAppButton = () => {
   const [showButton, setShowButton] = useState(false);
   const [showLabel, setShowLabel] = useState(false);
-  const [canPlaySound, setCanPlaySound] = useState(false);
 
   useEffect(() => {
-    // Allow audio to play only after user interaction
-    const enableSound = () => {
-      setCanPlaySound(true);
-      window.removeEventListener("click", enableSound); // Remove listener after interaction
-      window.removeEventListener("scroll", enableSound); // Remove listener after interaction
+    // Show the button when the user interacts with the page
+    const showWhatsAppButton = () => {
+      setShowButton(true);
+      setShowLabel(true); // Show the label immediately
+      window.removeEventListener("click", showWhatsAppButton);
+      window.removeEventListener("scroll", showWhatsAppButton);
     };
 
-    window.addEventListener("click", enableSound);
-    window.addEventListener("scroll", enableSound);
+    window.addEventListener("click", showWhatsAppButton);
+    window.addEventListener("scroll", showWhatsAppButton);
 
     return () => {
-      window.removeEventListener("click", enableSound);
-      window.removeEventListener("scroll", enableSound);
+      window.removeEventListener("click", showWhatsAppButton);
+      window.removeEventListener("scroll", showWhatsAppButton);
     };
   }, []);
-
-  useEffect(() => {
-    // Show the button after 5 seconds
-    const timer = setTimeout(() => {
-      setShowButton(true);
-      if (canPlaySound) playSound(); // Play sound only if allowed
-    }, 5000);
-
-    // Show the "Talk to Us" label after the button appears
-    const labelTimer = setTimeout(() => {
-      if (showButton) setShowLabel(true);
-    }, 6000); // 1 second after the button appears
-
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(labelTimer);
-    };
-  }, [showButton, canPlaySound]);
-
-  const playSound = () => {
-    const audio = new Audio("/notification.wav"); // Ensure the file is in the public folder
-    audio.play().catch((err) => console.log("Sound playback failed:", err));
-  };
 
   return (
     <div

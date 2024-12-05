@@ -19,7 +19,7 @@ const Navbar = () => {
 
         {/* Buy Me a Coffee Button for Mobile */}
         <a
-          href="https://www.buymeacoffee.com/yourlink"
+          href="https://www.buymeacoffee.com/rohitrayaan"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex md:hidden items-center bg-yellow-500 hover:bg-yellow-600 text-xs font-medium py-1 px-2 rounded-lg transition-colors space-x-1 sm:py-2 sm:px-3 sm:text-sm sm:space-x-2"
@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* Buy Me a Coffee Button for Desktop */}
         <a
-          href="https://www.buymeacoffee.com/yourlink"
+          href="https://www.buymeacoffee.com/rohitrayaan"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-sm font-medium py-2 px-4 rounded-lg transition-colors space-x-2"

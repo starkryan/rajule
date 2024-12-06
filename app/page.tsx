@@ -30,7 +30,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./navbar";
 import WhatsAppButton from "./WhatsappButton";
 
-
 export default function Home() {
   const [liked, setLiked] = useState(true); // State to track if the heart is liked
 
@@ -44,7 +43,7 @@ export default function Home() {
     <div className="font-sans bg-black text-gray-100">
       <style>
         @import
-        url('https://fonts.googleapis.com/css2?family=Doto:wght,ROND@800,4&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Silkscreen:wght@400;700&display=swap');
       </style>
 
       {/* Header Section */}
@@ -56,7 +55,7 @@ export default function Home() {
       >
         <Navbar />
       </motion.header>
-      <WhatsAppButton/>
+      <WhatsAppButton />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-24 text-center">
@@ -78,7 +77,7 @@ export default function Home() {
           {/* Modal */}
           {isPreviewOpen && (
             <div
-              className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50"
+              className="fixed inset-0 flex items-center justify-center  bg-opacity-70 z-50 bg-transparent" 
               onClick={() => setIsPreviewOpen(false)}
             >
               <Image
@@ -95,10 +94,11 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
             Hi, I'm
-            <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-300">
+            <span className="ml-2   text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-yellow-400 animate-text-glow ">
               Rohit Rayaan
             </span>
           </h2>
+
           <TypeAnimation
             sequence={[
               "A Mechanical Engineer.",
@@ -163,13 +163,9 @@ export default function Home() {
           <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-pink-500"></div>
         </div>
 
-       
-
-       
-
         {/* TECH STACK */}
-        <div className="flex justify-center items-center">
-          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl my-4">
+        <div className="flex justify-center items-center ">
+          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl my-4 ">
             TECH STACK
           </h1>
         </div>
@@ -290,7 +286,6 @@ export default function Home() {
           >
             <FaWordpress className="text-white-500 transform transition-transform hover:scale-110 hover:rotate-12" />
           </a>
-          
         </div>
 
         <style jsx>{`
@@ -455,11 +450,11 @@ export default function Home() {
               />
             </div>
             <div className="flex space-x-4 justify-center mt-6">
-              <button className="flex items-center space-x-2 bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300">
+              <button className="flex items-center space-x-2 bg-red-600 text-black px-4 py-2 rounded hover:bg-red-400 transition duration-300">
                 <AiOutlineCode className="text-2xl" />
                 <span>Red Pill</span>
               </button>
-              <button className="flex items-center space-x-2 bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300">
+              <button className="flex items-center space-x-2 bg-blue-600 text-black px-4 py-2 rounded hover:bg-blue-400 transition duration-300">
                 <AiOutlineEye className="text-2xl" />
                 <span>Blue Pill</span>
               </button>
@@ -651,10 +646,9 @@ export default function Home() {
       {/* Footer Section */}
       <footer className="bg-gray-900 text-white py-6">
         <div className="container mx-auto text-center">
-        <p className="text-lg mb-4">Follow me on</p>
-          
+          <p className="text-lg mb-4">Follow me on</p>
+
           <div className="flex justify-center items-center space-x-4 mt-4">
-            
             <a
               href="https://www.instagram.com/rohitrayaan"
               target="_blank"
@@ -699,7 +693,9 @@ export default function Home() {
               <span className="text-lg">Vercel</span>
             </a>
           </div>
-          <p className="mt-4 text-sm">&copy; 2024 Rohit Rayaan. All rights reserved.</p>
+          <p className="mt-4 text-sm">
+            &copy; 2024 Rohit Rayaan. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>

@@ -15,7 +15,6 @@ import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiTailwindcss, SiExpre
 import { FaBrain, FaBriefcase, FaCode, FaNewspaper, FaRocket, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation';
 
-
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -144,7 +143,7 @@ export default function HomePage() {
           </motion.h1>
           <motion.div
             variants={fadeInUp}
-            className="text-xl text-muted-foreground mb-8"
+            className="text-xl mb-8"
           >
             <TypeAnimation
               sequence={[
@@ -161,7 +160,7 @@ export default function HomePage() {
               speed={50}
               cursor={true}
               repeat={Infinity}
-              className="text-foreground"
+              className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60"
             />
           </motion.div>
           
@@ -358,35 +357,102 @@ export default function HomePage() {
 
         {/* Page 4 */}
         <div
-          className="flex flex-col items-center justify-center min-h-screen bg-background/95 w-full"
+          className="relative flex flex-col items-center justify-center py-32 w-full overflow-hidden bg-background"
           id="page4"
         >
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 items-center">
-              <div className="flex flex-col justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-                    <TypeAnimation
-                      sequence={[
-                        'Revolutionizing Development',
-                        1000,
-                        'Empowering Developers',
-                        1000,
-                        'Building the Future',
-                        1000,
-                      ]}
-                      wrapper="span"
-                      speed={50}
-                      cursor={true}
-                      repeat={Infinity}
-                      className="text-center"
-                    />
-                  </h2>
-                  <p className="mx-auto max-w-[600px] text-gray-200 md:text-xl">
-                    Join us in shaping the future of software development. Experience the power of AI-driven coding assistance.
-                  </p>
-                </div>
+          {/* Grid Background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--muted))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted))_1px,transparent_1px)] bg-[size:14px_24px] opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+          </div>
+
+          {/* Floating Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -left-4 top-1/4 w-24 h-24 bg-primary/20 rounded-full blur-xl animate-pulse" />
+            <div className="absolute right-10 top-1/3 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse delay-300" />
+            <div className="absolute left-1/3 bottom-1/4 w-28 h-28 bg-primary/20 rounded-full blur-xl animate-pulse delay-700" />
+          </div>
+
+          <div className="container relative px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-8 text-center">
+              {/* Main Content */}
+              <div className="space-y-4 max-w-3xl">
+                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  <TypeAnimation
+                    sequence={[
+                      'Building Amazing Experiences',
+                      1000,
+                      'Crafting Digital Solutions',
+                      1000,
+                      'Creating Innovative Apps',
+                      1000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    cursor={true}
+                    repeat={Infinity}
+                    className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60"
+                  />
+                </h2>
+                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
+                  Passionate about creating elegant solutions and delivering exceptional user experiences through clean, efficient code.
+                </p>
               </div>
+
+              {/* Feature Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                {[
+                  {
+                    icon: <FaCode className="h-6 w-6 text-primary" />,
+                    title: "Full Stack Development",
+                    description: "Building end-to-end solutions with modern technologies"
+                  },
+                  {
+                    icon: <SiFigma className="h-6 w-6 text-primary" />,
+                    title: "UI/UX Design",
+                    description: "Creating intuitive and beautiful user interfaces"
+                  },
+                  {
+                    icon: <SiGithub className="h-6 w-6 text-primary" />,
+                    title: "Open Source",
+                    description: "Contributing to and maintaining open source projects"
+                  }
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                    className="group cursor-pointer"
+                  >
+                    <div className="relative p-6 bg-card rounded-xl border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+                      <div className="relative space-y-2">
+                        <div className="p-3 bg-muted rounded-lg w-fit">
+                          {feature.icon}
+                        </div>
+                        <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
+                        <p className="text-muted-foreground">{feature.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="mt-8"
+              >
+                <Button size="lg" className="group" asChild>
+                  <a href="#contact">
+                    Let's Work Together
+                    <FaArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+              </motion.div>
             </div>
           </div>
         </div>

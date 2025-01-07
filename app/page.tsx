@@ -8,12 +8,12 @@ import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import MainNav from '@/components/main-nav'
 import Footer from '@/components/footer'
-import { Typewriter } from '@/components/typewriter'
 import { ScrollProgress } from '@/components/scroll-progress'
 import { ScrollToTop } from '@/components/scroll-to-top'
 import { motion } from 'framer-motion'
 import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiTailwindcss, SiExpress, SiPython,SiGithub, SiPostgresql, SiDocker, SiGithubactions, SiLinux, SiGit, SiFigma, SiPostman } from 'react-icons/si'
 import { FaBrain, FaBriefcase, FaCode, FaNewspaper, FaRocket, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa'
+import { TypeAnimation } from 'react-type-animation';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -145,16 +145,21 @@ export default function HomePage() {
             variants={fadeInUp}
             className="text-xl text-muted-foreground mb-8"
           >
-            <Typewriter 
-              words={[
-                "Full Stack Developer",
-                "UI/UX Enthusiast",
-                "Open Source Contributor",
-                "Tech Explorer"
+            <TypeAnimation
+              sequence={[
+                'Full Stack Developer',
+                1000,
+                'UI/UX Enthusiast',
+                1000,
+                'Open Source Contributor',
+                1000,
+                'Tech Explorer',
+                1000,
               ]}
-              typingSpeed={60}
-              deletingSpeed={40}
-              delayBetweenWords={2000}
+              wrapper="span"
+              speed={50}
+              cursor={true}
+              repeat={Infinity}
               className="text-foreground"
             />
           </motion.div>
@@ -349,6 +354,41 @@ export default function HomePage() {
             ))}
           </div>
         </motion.section>
+
+        {/* Page 4 */}
+        <div
+          className="flex flex-col items-center justify-center min-h-screen bg-background/95 w-full"
+          id="page4"
+        >
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 items-center">
+              <div className="flex flex-col justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+                    <TypeAnimation
+                      sequence={[
+                        'Revolutionizing Development',
+                        1000,
+                        'Empowering Developers',
+                        1000,
+                        'Building the Future',
+                        1000,
+                      ]}
+                      wrapper="span"
+                      speed={50}
+                      cursor={true}
+                      repeat={Infinity}
+                      className="text-center"
+                    />
+                  </h2>
+                  <p className="mx-auto max-w-[600px] text-gray-200 md:text-xl">
+                    Join us in shaping the future of software development. Experience the power of AI-driven coding assistance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Contact Section */}
         <motion.section 

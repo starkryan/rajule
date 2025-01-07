@@ -15,6 +15,7 @@ import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiTailwindcss, SiExpre
 import { FaBrain, FaBriefcase, FaCode, FaNewspaper, FaRocket, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation';
 
+
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },

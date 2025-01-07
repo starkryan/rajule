@@ -1,0 +1,22 @@
+{
+  "name": "Rohit Rayaan - Full Stack Developer",
+  "short_name": "Rohit Rayaan",
+  "description": "Experienced Full Stack Developer specializing in React, Next.js, Node.js & TypeScript. View my portfolio showcasing web applications, open-source projects & technical expertise.",
+  "start_url": "https://rohitrayaan.in",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://rohitrayaan.in/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://rohitrayaan.in/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

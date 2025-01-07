@@ -448,7 +448,7 @@ export default function HomePage() {
               >
                 <Button size="lg" className="group" asChild>
                   <a href="#contact">
-                    Let's Work Together
+                    Let&apos;s Work Together
                     <FaArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
@@ -481,11 +481,8 @@ export default function HomePage() {
                   Send Email
                 </a>
               </Button>
-              <Button variant="outline" asChild size="lg">
-                <a href="/cv.pdf" download>
-                  Download CV
-                </a>
-              </Button>
+              
+              
             </div>
           </div>
         </motion.section>

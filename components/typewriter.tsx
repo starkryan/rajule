@@ -23,7 +23,7 @@ const Typewriter = ({
   const [currentText, setCurrentText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
   const [isBlinking, setIsBlinking] = useState(true)
-  const timeoutRef = useRef<NodeJS.Timeout>()
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const currentWord = words[currentWordIndex]

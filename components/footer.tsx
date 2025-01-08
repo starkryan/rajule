@@ -1,49 +1,45 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Button } from './ui/button'
-import { 
-  SiGithub, 
-  SiLinkedin, 
-  SiInstagram 
-} from 'react-icons/si'
-import { HiMail } from 'react-icons/hi'
-import { cn } from '@/lib/utils'
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
+import { HiMail } from "react-icons/hi";
+import { cn } from "@/lib/utils";
 
 const socialLinks = [
   {
-    name: 'GitHub',
+    name: "GitHub",
     icon: SiGithub,
-    url: 'https://github.com/yourusername',
-    color: 'hover:text-[#333] dark:hover:text-[#fff]'
+    url: "https://github.com/yourusername",
+    color: "hover:text-[#333] dark:hover:text-[#fff]",
   },
   {
-    name: 'LinkedIn',
+    name: "LinkedIn",
     icon: SiLinkedin,
-    url: 'https://linkedin.com/in/yourusername',
-    color: 'hover:text-[#0077B5]'
+    url: "https://linkedin.com/in/yourusername",
+    color: "hover:text-[#0077B5]",
   },
   {
-    name: 'Instagram',
+    name: "Instagram",
     icon: SiInstagram,
-    url: 'https://instagram.com/yourusername',
-    color: 'hover:text-[#E4405F]'
+    url: "https://instagram.com/yourusername",
+    color: "hover:text-[#E4405F]",
   },
   {
-    name: 'Email',
+    name: "Email",
     icon: HiMail,
-    url: 'mailto:your.email@example.com',
-    color: 'hover:text-[#D44638]'
-  }
-]
+    url: "mailto:your.email@example.com",
+    color: "hover:text-[#D44638]",
+  },
+];
 
 export default function Footer() {
   return (
     <footer className="relative mt-20">
       {/* Gradient divider */}
       <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-border to-transparent" />
-      
+
       <div className="container mx-auto">
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -55,11 +51,13 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
-              <h3 className="text-2xl ml-2 font-bold bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
+              <h3 className="text-2xl md:text-3xl ml-8 font-bold bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
                 Let&apos;s Connect!
               </h3>
-              <p className="text-muted-foreground max-w-md ml-2 mr-2">
-                Feel free to reach out for collaborations or just a friendly hello! I&apos;m always open to discussing new projects or opportunities.
+              <p className="text-muted-foreground max-w-md ml-8 mr-8 text-center">
+                Feel free to reach out for collaborations or just a friendly
+                hello! I&apos;m always open to discussing new projects or
+                opportunities.
               </p>
             </motion.div>
 
@@ -72,7 +70,7 @@ export default function Footer() {
               className="flex justify-center md:justify-end space-x-4"
             >
               {socialLinks.map((social, index) => {
-                const Icon = social.icon
+                const Icon = social.icon;
                 return (
                   <motion.div
                     key={social.name}
@@ -82,7 +80,7 @@ export default function Footer() {
                     transition={{
                       duration: 0.5,
                       delay: index * 0.1,
-                      ease: [0.645, 0.045, 0.355, 1.000]
+                      ease: [0.645, 0.045, 0.355, 1.0],
                     }}
                   >
                     <Button
@@ -104,7 +102,7 @@ export default function Footer() {
                       </a>
                     </Button>
                   </motion.div>
-                )
+                );
               })}
             </motion.div>
           </div>
@@ -117,7 +115,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-12 text-center"
           >
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-center">
               Built with ♥️ by{" "}
               <a
                 href="https://github.com/yourusername"
@@ -128,21 +126,10 @@ export default function Footer() {
                 Rohit&nbsp;Rayaan
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
               </a>
-              . The source code is available on{" "}
-              <a
-                href="https://github.com/yourusername/portfolio"
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium underline-offset-4 hover:text-foreground transition-colors relative group"
-              >
-                GitHub
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-              </a>
-              .
             </p>
           </motion.div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

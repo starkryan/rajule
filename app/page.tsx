@@ -148,13 +148,13 @@ export default function HomePage() {
             <TypeAnimation
               sequence={[
                 'Full Stack Developer',
-                1000,
+                1500,
                 'UI/UX Enthusiast',
-                1000,
+                1500,
                 'Open Source Contributor',
-                1000,
+                1500,
                 'Tech Explorer',
-                1000,
+                1500,
               ]}
               wrapper="span"
               speed={50}
@@ -168,10 +168,22 @@ export default function HomePage() {
             variants={fadeInUp}
             className="flex gap-2 flex-wrap justify-center"
           >
-            <Badge variant="secondary" className="animate-in fade-in-50">React</Badge>
-            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-100">Next.js</Badge>
-            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-200">TypeScript</Badge>
-            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-300">Node.js</Badge>
+            <Badge variant="secondary" className="animate-in fade-in-50 flex items-center gap-1.5">
+              <SiReact className="h-3.5 w-3.5 text-[#61DAFB]" />
+              React
+            </Badge>
+            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-100 flex items-center gap-1.5">
+              <SiNextdotjs className="h-3.5 w-3.5" />
+              Next.js
+            </Badge>
+            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-200 flex items-center gap-1.5">
+              <SiTypescript className="h-3.5 w-3.5 text-[#3178C6]" />
+              TypeScript
+            </Badge>
+            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-300 flex items-center gap-1.5">
+              <SiNodedotjs className="h-3.5 w-3.5 text-[#339933]" />
+              Node.js
+            </Badge>
           </motion.div>
         </motion.section>
 
@@ -377,7 +389,7 @@ export default function HomePage() {
             <div className="flex flex-col items-center justify-center space-y-8 text-center">
               {/* Main Content */}
               <div className="space-y-4 max-w-3xl">
-                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none">
                   <TypeAnimation
                     sequence={[
                       'Building Amazing Experiences',

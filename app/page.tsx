@@ -1,117 +1,183 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { Separator } from "@/components/ui/separator"
-import { Badge } from "@/components/ui/badge"
-import MainNav from '@/components/main-nav'
-import Footer from '@/components/footer'
-import { ScrollProgress } from '@/components/scroll-progress'
-import { ScrollToTop } from '@/components/scroll-to-top'
-import { motion } from 'framer-motion'
-import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiTailwindcss, SiExpress, SiPython,SiGithub, SiPostgresql, SiDocker, SiGithubactions, SiLinux, SiGit, SiFigma, SiPostman } from 'react-icons/si'
-import { FaBrain, FaBriefcase, FaCode, FaNewspaper, FaRocket, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa'
-import { TypeAnimation } from 'react-type-animation';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+import MainNav from "@/components/main-nav";
+import Footer from "@/components/footer";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import { motion } from "framer-motion";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiExpress,
+  SiPython,
+  SiGithub,
+  SiPostgresql,
+  SiDocker,
+  SiGithubactions,
+  SiLinux,
+  SiGit,
+  SiFigma,
+  SiPostman,
+} from "react-icons/si";
+import {
+  FaBrain,
+  FaCode,
+  FaRocket,
+  FaExternalLinkAlt,
+  FaArrowRight,
+} from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-}
+  transition: { duration: 0.5 },
+};
 
 const staggerContainer = {
   initial: {},
   animate: {
     transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const skills = [
-  { 
-    name: "Frontend", 
+  {
+    name: "Frontend",
     icon: SiReact,
     items: [
-      { name: "React", icon: <SiReact className="h-3 w-3 text-[#61DAFB] hover:text-[#61DAFB]/80" /> },
-      { name: "Next.js", icon: <SiNextdotjs className="h-3 w-3 text-[#000000] dark:text-[#FFFFFF] hover:text-[#666666] dark:hover:text-[#999999]" /> },
-      { name: "TypeScript", icon: <SiTypescript className="h-3 w-3 text-[#3178C6] hover:text-[#3178C6]/80" /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss className="h-3 w-3 text-[#06B6D4] hover:text-[#06B6D4]/80" /> }
-    ] 
+      {
+        name: "React",
+        icon: (
+          <SiReact className="h-3 w-3 text-[#61DAFB] hover:text-[#61DAFB]/80" />
+        ),
+      },
+      {
+        name: "Next.js",
+        icon: (
+          <SiNextdotjs className="h-3 w-3 text-[#000000] dark:text-[#FFFFFF] hover:text-[#666666] dark:hover:text-[#999999]" />
+        ),
+      },
+      {
+        name: "TypeScript",
+        icon: (
+          <SiTypescript className="h-3 w-3 text-[#3178C6] hover:text-[#3178C6]/80" />
+        ),
+      },
+      {
+        name: "Tailwind CSS",
+        icon: (
+          <SiTailwindcss className="h-3 w-3 text-[#06B6D4] hover:text-[#06B6D4]/80" />
+        ),
+      },
+    ],
   },
-  { 
-    name: "Backend", 
+  {
+    name: "Backend",
     icon: SiNodedotjs,
     items: [
-      { name: "Node.js", icon: <SiNodedotjs className="h-3 w-3 text-[#339933] hover:text-[#339933]/80" /> },
-      { name: "Express", icon: <SiExpress className="h-3 w-3 text-[#000000] dark:text-[#FFFFFF] hover:text-[#666666] dark:hover:text-[#999999]" /> },
-      { name: "Python", icon: <SiPython className="h-3 w-3 text-[#3776AB] hover:text-[#3776AB]/80" /> },
-      { name: "PostgreSQL", icon: <SiPostgresql className="h-3 w-3 text-[#4169E1] hover:text-[#4169E1]/80" /> }
-    ] 
+      {
+        name: "Node.js",
+        icon: (
+          <SiNodedotjs className="h-3 w-3 text-[#339933] hover:text-[#339933]/80" />
+        ),
+      },
+      {
+        name: "Express",
+        icon: (
+          <SiExpress className="h-3 w-3 text-[#000000] dark:text-[#FFFFFF] hover:text-[#666666] dark:hover:text-[#999999]" />
+        ),
+      },
+      {
+        name: "Python",
+        icon: (
+          <SiPython className="h-3 w-3 text-[#3776AB] hover:text-[#3776AB]/80" />
+        ),
+      },
+      {
+        name: "PostgreSQL",
+        icon: (
+          <SiPostgresql className="h-3 w-3 text-[#4169E1] hover:text-[#4169E1]/80" />
+        ),
+      },
+    ],
   },
-  { 
-    name: "DevOps", 
+  {
+    name: "DevOps",
     icon: SiDocker,
     items: [
-      { name: "Docker", icon: <SiDocker className="h-3 w-3 text-[#2496ED] hover:text-[#2496ED]/80" /> },
-      { name: "CI/CD", icon: <SiGithubactions className="h-3 w-3 text-[#2088FF] hover:text-[#2088FF]/80" /> },
-      { name: "Linux", icon: <SiLinux className="h-3 w-3 text-[#FCC624] hover:text-[#FCC624]/80" /> }
-    ] 
+      {
+        name: "Docker",
+        icon: (
+          <SiDocker className="h-3 w-3 text-[#2496ED] hover:text-[#2496ED]/80" />
+        ),
+      },
+      {
+        name: "CI/CD",
+        icon: (
+          <SiGithubactions className="h-3 w-3 text-[#2088FF] hover:text-[#2088FF]/80" />
+        ),
+      },
+      {
+        name: "Linux",
+        icon: (
+          <SiLinux className="h-3 w-3 text-[#FCC624] hover:text-[#FCC624]/80" />
+        ),
+      },
+    ],
   },
-  { 
-    name: "Tools", 
+  {
+    name: "Tools",
     icon: SiGit,
     items: [
-      { name: "Git", icon: <SiGit className="h-3 w-3 text-[#F05032] hover:text-[#F05032]/80" /> },
-      { name: "Figma", icon: <SiFigma className="h-3 w-3 text-[#F24E1E] hover:text-[#F24E1E]/80" /> },
-      { name: "Postman", icon: <SiPostman className="h-3 w-3 text-[#FF6C37] hover:text-[#FF6C37]/80" /> }
-    ] 
-  }
-]
-
-const experiences = [
-  {
-    title: "Senior Frontend Developer",
-    company: "Tech Corp",
-    period: "2022 - Present",
-    description: "Led the development of modern web applications using React and Next.js",
-    skills: ["React", "Next.js", "TypeScript"]
+      {
+        name: "Git",
+        icon: (
+          <SiGit className="h-3 w-3 text-[#F05032] hover:text-[#F05032]/80" />
+        ),
+      },
+      {
+        name: "Figma",
+        icon: (
+          <SiFigma className="h-3 w-3 text-[#F24E1E] hover:text-[#F24E1E]/80" />
+        ),
+      },
+      {
+        name: "Postman",
+        icon: (
+          <SiPostman className="h-3 w-3 text-[#FF6C37] hover:text-[#FF6C37]/80" />
+        ),
+      },
+    ],
   },
-  {
-    title: "Full Stack Developer",
-    company: "Innovation Labs",
-    period: "2020 - 2022",
-    description: "Developed full-stack applications with focus on performance and scalability",
-    skills: ["Node.js", "React", "PostgreSQL"]
-  }
-]
-
-const blogPosts = [
-  {
-    title: "Building Modern UIs with React and Framer Motion",
-    date: "Jan 2024",
-    readTime: "5 min read",
-    description: "Learn how to create engaging user interfaces with smooth animations"
-  },
-  {
-    title: "The Power of Server Components in Next.js",
-    date: "Dec 2023",
-    readTime: "7 min read",
-    description: "Deep dive into Next.js server components and their benefits"
-  }
-]
+];
 
 export default function HomePage() {
-  const [mounted, setMounted] = React.useState(false)
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return null
+    return null;
   }
 
   return (
@@ -119,7 +185,7 @@ export default function HomePage() {
       <ScrollProgress />
       <ScrollToTop />
       <MainNav />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <motion.section
@@ -135,25 +201,22 @@ export default function HomePage() {
               <AvatarFallback>RR</AvatarFallback>
             </Avatar>
           </motion.div>
-          <motion.h1 
+          <motion.h1
             variants={fadeInUp}
             className="text-4xl font-bold tracking-tight mb-4"
           >
             Rohit&nbsp;Rayaan
           </motion.h1>
-          <motion.div
-            variants={fadeInUp}
-            className="text-xl mb-8"
-          >
+          <motion.div variants={fadeInUp} className="text-xl mb-8">
             <TypeAnimation
               sequence={[
-                'Full Stack Developer',
+                "Full Stack Developer",
                 1500,
-                'UI/UX Enthusiast',
+                "UI/UX Enthusiast",
                 1500,
-                'Open Source Contributor',
+                "Open Source Contributor",
                 1500,
-                'Tech Explorer',
+                "Tech Explorer",
                 1500,
               ]}
               wrapper="span"
@@ -163,24 +226,36 @@ export default function HomePage() {
               className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60"
             />
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={fadeInUp}
             className="flex gap-2 flex-wrap justify-center"
           >
-            <Badge variant="secondary" className="animate-in fade-in-50 flex items-center gap-1.5">
+            <Badge
+              variant="secondary"
+              className="animate-in fade-in-50 flex items-center gap-1.5"
+            >
               <SiReact className="h-3.5 w-3.5 text-[#61DAFB]" />
               React
             </Badge>
-            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-100 flex items-center gap-1.5">
+            <Badge
+              variant="secondary"
+              className="animate-in fade-in-50 fill-mode-both delay-100 flex items-center gap-1.5"
+            >
               <SiNextdotjs className="h-3.5 w-3.5" />
               Next.js
             </Badge>
-            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-200 flex items-center gap-1.5">
+            <Badge
+              variant="secondary"
+              className="animate-in fade-in-50 fill-mode-both delay-200 flex items-center gap-1.5"
+            >
               <SiTypescript className="h-3.5 w-3.5 text-[#3178C6]" />
               TypeScript
             </Badge>
-            <Badge variant="secondary" className="animate-in fade-in-50 fill-mode-both delay-300 flex items-center gap-1.5">
+            <Badge
+              variant="secondary"
+              className="animate-in fade-in-50 fill-mode-both delay-300 flex items-center gap-1.5"
+            >
               <SiNodedotjs className="h-3.5 w-3.5 text-[#339933]" />
               Node.js
             </Badge>
@@ -190,8 +265,8 @@ export default function HomePage() {
         <Separator className="my-8" />
 
         {/* Skills Section */}
-        <motion.section 
-          id="skills" 
+        <motion.section
+          id="skills"
           className="container mx-auto px-4 py-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -221,8 +296,8 @@ export default function HomePage() {
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {category.items.map((skill) => (
-                        <Badge 
-                          key={skill.name} 
+                        <Badge
+                          key={skill.name}
                           variant="outline"
                           className="flex items-center gap-1 py-1"
                         >
@@ -237,8 +312,6 @@ export default function HomePage() {
             ))}
           </div>
         </motion.section>
-
-        
 
         {/* Projects Section */}
         <section id="projects" className="container mx-auto px-4 py-16">
@@ -260,27 +333,46 @@ export default function HomePage() {
                     <CardTitle className="flex items-center justify-between">
                       Project {index + 1}
                       <div className="flex gap-2">
-                        <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-8 w-8"
+                          asChild
+                        >
                           <a href="#" target="_blank" rel="noopener noreferrer">
                             <SiGithub className="h-4 w-4" />
                           </a>
                         </Button>
-                        <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-8 w-8"
+                          asChild
+                        >
                           <a href="#" target="_blank" rel="noopener noreferrer">
                             <FaExternalLinkAlt className="h-4 w-4" />
                           </a>
                         </Button>
                       </div>
                     </CardTitle>
-                    <CardDescription>A brief description of the project</CardDescription>
+                    <CardDescription>
+                      A brief description of the project
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Detailed explanation of the project, technologies used, and your role.
+                      Detailed explanation of the project, technologies used,
+                      and your role.
                     </p>
                     <div className="flex gap-2">
                       <Badge>React</Badge>
-                      <Badge>{index === 0 ? "TypeScript" : index === 1 ? "Next.js" : "Node.js"}</Badge>
+                      <Badge>
+                        {index === 0
+                          ? "TypeScript"
+                          : index === 1
+                          ? "Next.js"
+                          : "Node.js"}
+                      </Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -288,8 +380,6 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-
-        
 
         {/* Page 4 */}
         <div
@@ -316,11 +406,11 @@ export default function HomePage() {
                 <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-3xl/none">
                   <TypeAnimation
                     sequence={[
-                      'Building Amazing Experiences',
+                      "Building Amazing Experiences",
                       1000,
-                      'Crafting Digital Solutions',
+                      "Crafting Digital Solutions",
                       1000,
-                      'Creating Innovative Apps',
+                      "Creating Innovative Apps",
                       1000,
                     ]}
                     wrapper="span"
@@ -331,9 +421,11 @@ export default function HomePage() {
                   />
                 </h2>
                 <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
-                  Passionate about creating elegant solutions and delivering exceptional user experiences through clean, efficient code.
+                  Passionate about creating elegant solutions and delivering
+                  exceptional user experiences through clean, efficient code.
                 </p>
               </div>
+
 
               {/* Feature Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
@@ -341,18 +433,21 @@ export default function HomePage() {
                   {
                     icon: <FaCode className="h-6 w-6 text-primary" />,
                     title: "Full Stack Development",
-                    description: "Building end-to-end solutions with modern technologies"
+                    description:
+                      "Building end-to-end solutions with modern technologies",
                   },
                   {
                     icon: <SiFigma className="h-6 w-6 text-primary" />,
                     title: "UI/UX Design",
-                    description: "Creating intuitive and beautiful user interfaces"
+                    description:
+                      "Creating intuitive and beautiful user interfaces",
                   },
                   {
                     icon: <SiGithub className="h-6 w-6 text-primary" />,
                     title: "Open Source",
-                    description: "Contributing to and maintaining open source projects"
-                  }
+                    description:
+                      "Contributing to and maintaining open source projects",
+                  },
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -367,8 +462,12 @@ export default function HomePage() {
                         <div className="p-3 bg-muted rounded-lg w-fit">
                           {feature.icon}
                         </div>
-                        <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
-                        <p className="text-muted-foreground">{feature.description}</p>
+                        <h3 className="text-xl font-semibold text-foreground">
+                          {feature.title}
+                        </h3>
+                        <p className="text-muted-foreground">
+                          {feature.description}
+                        </p>
                       </div>
                     </div>
                   </motion.div>
@@ -394,8 +493,8 @@ export default function HomePage() {
         </div>
 
         {/* Contact Section */}
-        <motion.section 
-          id="contact" 
+        <motion.section
+          id="contact"
           className="container mx-auto px-4 py-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -409,16 +508,13 @@ export default function HomePage() {
           <div className="flex flex-col items-center max-w-lg mx-auto text-center">
             <p className="text-muted-foreground mb-8">
               I&apos;m always open to new opportunities and collaborations.
-              Whether you have a question or just want to say hi, feel free to reach out!
+              Whether you have a question or just want to say hi, feel free to
+              reach out!
             </p>
             <div className="flex gap-4">
               <Button asChild size="lg">
-                <a href="mailto:your.email@example.com">
-                  Send Email
-                </a>
+                <a href="mailto:your.email@example.com">Send Email</a>
               </Button>
-              
-              
             </div>
           </div>
         </motion.section>
@@ -426,6 +522,5 @@ export default function HomePage() {
 
       <Footer />
     </div>
-  )
+  );
 }
-

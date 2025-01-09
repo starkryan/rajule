@@ -426,6 +426,7 @@ export default function HomePage() {
                 </p>
               </div>
               
+              
 
               {/* Feature Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">

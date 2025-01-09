@@ -19,9 +19,11 @@ export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: title,
-    template: `%s | Rohit Rayaan - Full Stack Developer`,
+    template: `%s | ${siteConfig.name}`,
   },
   description,
+  applicationName: siteConfig.name,
+  generator: 'Next.js',
   keywords: [
     'Full Stack Developer',
     'React Developer',

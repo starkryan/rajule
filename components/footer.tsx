@@ -11,25 +11,25 @@ const socialLinks = [
   {
     name: "GitHub",
     icon: SiGithub,
-    url: "https://github.com/yourusername",
+    url: "https://github.com/starkryan",
     color: "hover:text-[#333] dark:hover:text-[#fff]",
   },
   {
     name: "LinkedIn",
     icon: SiLinkedin,
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://linkedin.com/in/rohitrayaan",
     color: "hover:text-[#0077B5]",
   },
   {
     name: "Instagram",
     icon: SiInstagram,
-    url: "https://instagram.com/yourusername",
+    url: "https://instagram.com/rohitrayaan",
     color: "hover:text-[#E4405F]",
   },
   {
     name: "Email",
     icon: HiMail,
-    url: "mailto:your.email@example.com",
+    url: "mailto:youremail@example.com",
     color: "hover:text-[#D44638]",
   },
 ];
@@ -118,7 +118,7 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground text-center">
               Built with ♥️ by{" "}
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/starkryan"
                 target="_blank"
                 rel="noreferrer"
                 className="font-medium underline-offset-4 hover:text-foreground transition-colors relative group"

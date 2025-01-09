@@ -238,38 +238,7 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        {/* Experience Section */}
-        <motion.section 
-          id="experience" 
-          className="container mx-auto px-4 py-16 bg-muted/50"
-        >
-          <div className="flex items-center gap-2 mb-8">
-            <FaBriefcase className="h-6 w-6 text-primary" />
-            <h2 className="text-3xl font-bold">Experience</h2>
-          </div>
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[2px] before:bg-primary/20 hover:before:bg-primary before:transition-colors"
-              >
-                <div className="absolute left-0 top-0 w-2 h-2 rounded-full bg-primary transform -translate-x-[5px]" />
-                <h3 className="text-xl font-semibold">{exp.title}</h3>
-                <p className="text-muted-foreground">{exp.company} • {exp.period}</p>
-                <p className="mt-2">{exp.description}</p>
-                <div className="flex gap-2 mt-3">
-                  {exp.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary">{skill}</Badge>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+        
 
         {/* Projects Section */}
         <section id="projects" className="container mx-auto px-4 py-16">
@@ -320,52 +289,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Blog Section */}
-        <motion.section 
-          id="blog" 
-          className="container mx-auto px-4 py-16 bg-muted/50"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex items-center gap-2 mb-8">
-            <FaNewspaper className="h-6 w-6 text-primary" />
-            <h2 className="text-3xl font-bold">Latest Posts</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {blogPosts.map((post, index) => (
-              <motion.div
-                key={post.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="group cursor-pointer hover:shadow-lg transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <CardTitle className="group-hover:text-primary transition-colors">
-                          {post.title}
-                        </CardTitle>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-                          <span>{post.date}</span>
-                          <span>•</span>
-                          <span>{post.readTime}</span>
-                        </div>
-                      </div>
-                      <FaArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                    </div>
-                    <CardDescription className="mt-2">
-                      {post.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+        
 
         {/* Page 4 */}
         <div
@@ -504,3 +428,4 @@ export default function HomePage() {
     </div>
   )
 }
+

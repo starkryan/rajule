@@ -24,6 +24,22 @@ export const defaultMetadata: Metadata = {
   description,
   applicationName: siteConfig.name,
   generator: 'Next.js',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', type: 'image/png', sizes: '180x180' },
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
   keywords: [
     'Full Stack Developer',
     'React Developer',

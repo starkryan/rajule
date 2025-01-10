@@ -197,7 +197,7 @@ export default function HomePage() {
           animate="animate"
         >
           <motion.div variants={fadeInUp}>
-            <Avatar className="w-48 h-48 mb-8 mt-4 border-2 ring-2 ring-primary ring-offset-2 ring-offset-background">
+            <Avatar className="w-36 h-36 mb-8 mt-4 border-2 ring-2 ring-primary ring-offset-2 ring-offset-background">
               <AvatarImage src="author.webp" alt="Rohit Rayaan" />
               <AvatarFallback>RR</AvatarFallback>
             </Avatar>
@@ -426,6 +426,7 @@ export default function HomePage() {
                   exceptional user experiences through clean, efficient code.
                 </p>
               </div>
+
 
               {/* Feature Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">

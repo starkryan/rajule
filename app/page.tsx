@@ -263,7 +263,7 @@ export default function HomePage() {
           </motion.div>
         </motion.section>
 
-        <Separator className="my-8" />
+        <Separator className="my-2" />
 
         {/* Skills Section */}
         <motion.section
@@ -426,6 +426,7 @@ export default function HomePage() {
                   exceptional user experiences through clean, efficient code.
                 </p>
               </div>
+
 
 
               {/* Feature Cards */}

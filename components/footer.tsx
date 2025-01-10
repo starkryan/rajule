@@ -3,9 +3,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiInstagram, SiVercel } from "react-icons/si";
 import { HiMail } from "react-icons/hi";
 import { cn } from "@/lib/utils";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const socialLinks = [
   {
@@ -115,18 +116,36 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-12 text-center"
           >
-            <p className="text-sm text-muted-foreground text-center">
-              Built with ♥️ by{" "}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <p className="text-sm text-muted-foreground inline-flex items-center justify-center gap-2">
+                Built with ♥️ by{" "}
+                <a
+                  href="https://github.com/starkryan"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium underline-offset-4 hover:text-foreground transition-colors relative group"
+                >
+                  Rohit&nbsp;Rayaan
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                </a>
+                <Avatar className="w-8 h-8">
+                  <AvatarImage src="app.webp" alt="Rohit Rayaan" />
+                  <AvatarFallback>RR</AvatarFallback>
+                </Avatar>
+              </p>
+              <span className="text-muted-foreground">•</span>
               <a
-                href="https://github.com/starkryan"
+                href="https://vercel.com"
                 target="_blank"
-                rel="noreferrer"
-                className="font-medium underline-offset-4 hover:text-foreground transition-colors relative group"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
               >
-                Rohit&nbsp;Rayaan
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                <span className="bg-black text-white dark:bg-white dark:text-black px-2 py-1 rounded text-xs font-medium ml-2">
+                  Powered by
+                </span>
+                <SiVercel className="h-4 w-4 group-hover:scale-110 transition-transform" />
               </a>
-            </p>
+            </div>
           </motion.div>
         </div>
       </div>

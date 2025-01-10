@@ -42,6 +42,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -185,7 +186,7 @@ export default function HomePage() {
       <ScrollProgress />
       <ScrollToTop />
       <MainNav />
-
+      <SpeedInsights />
       <main className="flex-1">
         {/* Hero Section */}
         <motion.section
@@ -425,9 +426,6 @@ export default function HomePage() {
                   exceptional user experiences through clean, efficient code.
                 </p>
               </div>
-              
-              
-              
 
               {/* Feature Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">

@@ -41,7 +41,7 @@ export default function Footer() {
       {/* Background gradient and pattern */}
       <div className="absolute inset-0 bg-gradient-to-b from-background to-background/50" />
       <div className="absolute inset-0 bg-grid-small-black/[0.05] dark:bg-grid-small-white/[0.05]" />
-      
+
       {/* Gradient divider */}
       <div className="absolute top-0 inset-x-0 flex justify-center">
         <div className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
@@ -60,7 +60,7 @@ export default function Footer() {
             >
               <div className="absolute -top-8 -left-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
-              
+
               <h3 className="text-3xl md:text-4xl font-bold">
                 <span className="bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
                   Let&apos;s Connect!
@@ -147,11 +147,11 @@ export default function Footer() {
                     className="font-medium hover:text-foreground transition-colors relative group inline-flex items-center gap-1"
                   >
                     Rohit Rayaan
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary/40 group-hover:bg-primary transition-all scale-x-100 group-hover:scale-x-100 origin-left" />
                   </a>
                 </p>
               </div>
-              
+
               <a
                 href="https://vercel.com"
                 target="_blank"

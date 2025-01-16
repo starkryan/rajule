@@ -33,9 +33,8 @@ import {
   SiFigma,
   SiPostman,
   SiMongodb,
-  
 } from "react-icons/si";
-import { BiLogoVisualStudio, BiVercel, BiFramer } from "react-icons/bi";
+import { BiLogoVisualStudio } from "react-icons/bi";
 import { TbBrandReactNative } from "react-icons/tb";
 import {
   FaBrain,

@@ -200,7 +200,7 @@ export default function HomePage() {
           animate="animate"
         >
           <motion.div variants={fadeInUp}>
-            <Avatar className="w-36 h-36 mb-8 mt-4 border-2 ring-2 ring-primary ring-offset-2 ring-offset-background">
+            <Avatar className="w-36 h-36 mb-8 mt-8 border-2 ring-2 ring-primary ring-offset-2 ring-offset-background">
               <AvatarImage src="author.webp" alt="Rohit Rayaan" />
               <AvatarFallback>RR</AvatarFallback>
             </Avatar>
@@ -234,7 +234,7 @@ export default function HomePage() {
           </motion.div>
           <motion.p
             variants={fadeInUp}
-            className="inline-flex items-center px-4 py-1.5 text-xs mb-4 sm:text-sm font-medium text-foreground dark:text-foreground/90 bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 rounded-full shadow-sm hover:bg-accent/50 dark:hover:bg-accent/20 transition-all duration-300"
+            className="inline-flex items-center px-4 py-1.5 text-xs mb-8 sm:text-sm font-medium text-foreground dark:text-foreground/90 bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 rounded-full shadow-sm hover:bg-accent/50 dark:hover:bg-accent/20 transition-all duration-300"
           >
             <FaCode className="h-5 w-5 text-primary dark:text-primary/90 mr-2" />
             B.Tech in Computer Science and Engineering

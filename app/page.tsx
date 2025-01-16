@@ -12,7 +12,6 @@ import {
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import MainNav from "@/components/main-nav";
 import Footer from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { ScrollToTop } from "@/components/scroll-to-top";
@@ -33,7 +32,11 @@ import {
   SiGit,
   SiFigma,
   SiPostman,
+  SiMongodb,
+  
 } from "react-icons/si";
+import { BiLogoVisualStudio, BiVercel, BiFramer } from "react-icons/bi";
+import { TbBrandReactNative } from "react-icons/tb";
 import {
   FaBrain,
   FaCode,
@@ -43,6 +46,7 @@ import {
 } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import MainNav from "@/components/main-nav";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -219,6 +223,8 @@ export default function HomePage() {
                 1500,
                 "Tech Explorer",
                 1500,
+                "Android & iOS Developer",
+                1500,
               ]}
               wrapper="span"
               speed={50}
@@ -227,39 +233,127 @@ export default function HomePage() {
               className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60"
             />
           </motion.div>
+          <motion.p
+            variants={fadeInUp}
+            className="inline-flex items-center px-4 py-1.5 text-xs mb-4 sm:text-sm font-medium text-foreground dark:text-foreground/90 bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 rounded-full shadow-sm hover:bg-accent/50 dark:hover:bg-accent/20 transition-all duration-300"
+          >
+            <FaCode className="h-5 w-5 text-primary dark:text-primary/90 mr-2" />
+            B.Tech in Computer Science and Engineering
+          </motion.p>
 
           <motion.div
             variants={fadeInUp}
-            className="flex gap-2 flex-wrap justify-center"
+            className="flex gap-3 flex-wrap justify-center max-w-3xl mx-auto"
           >
-            <Badge
-              variant="secondary"
-              className="animate-in fade-in-50 flex items-center gap-1.5"
+            {/* Development */}
+            <motion.div
+              whileHover={{ scale: 1.2, rotate: 360 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
             >
-              <SiReact className="h-3.5 w-3.5 text-[#61DAFB]" />
-              React
-            </Badge>
-            <Badge
-              variant="secondary"
-              className="animate-in fade-in-50 fill-mode-both delay-100 flex items-center gap-1.5"
+              <SiReact className="h-5 w-5 text-[#61DAFB] hover:animate-spin" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
             >
-              <SiNextdotjs className="h-3.5 w-3.5" />
-              Next.js
-            </Badge>
-            <Badge
-              variant="secondary"
-              className="animate-in fade-in-50 fill-mode-both delay-200 flex items-center gap-1.5"
+              <SiNextdotjs className="h-5 w-5" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
             >
-              <SiTypescript className="h-3.5 w-3.5 text-[#3178C6]" />
-              TypeScript
-            </Badge>
-            <Badge
-              variant="secondary"
-              className="animate-in fade-in-50 fill-mode-both delay-300 flex items-center gap-1.5"
+              <SiTypescript className="h-5 w-5 text-[#3178C6]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
             >
-              <SiNodedotjs className="h-3.5 w-3.5 text-[#339933]" />
-              Node.js
-            </Badge>
+              <SiNodedotjs className="h-5 w-5 text-[#339933]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            >
+              <SiTailwindcss className="h-5 w-5 text-[#38B2AC]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            >
+              <TbBrandReactNative className="h-5 w-5 text-[#21e9df]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            >
+              <SiMongodb className="h-5 w-5 text-[#47A248]" />
+            </motion.div>
+
+            {/* Tools */}
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            >
+              <SiLinux className="h-5 w-5 text-[#FCC624]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            >
+              <BiLogoVisualStudio className="h-5 w-5 text-[#007ACC]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            >
+              <SiPostman className="h-5 w-5 text-[#FF6C37]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            >
+              <SiGithub className="h-5 w-5" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.2, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+            >
+              <SiDocker className="h-5 w-5 text-[#2496ED]" />
+            </motion.div>
           </motion.div>
         </motion.section>
 
@@ -427,8 +521,6 @@ export default function HomePage() {
                 </p>
               </div>
 
-
-
               {/* Feature Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                 {[
@@ -458,7 +550,7 @@ export default function HomePage() {
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                     className="group cursor-pointer"
                   >
-                    <div className="relative p-6 bg-card rounded-xl border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="relative p-6 bg-card rounded-xl border border-border shadow-sm hover:shadow-lg transition-all duration-300">
                       <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
                       <div className="relative space-y-2">
                         <div className="p-3 bg-muted rounded-lg w-fit">

@@ -38,24 +38,35 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="relative mt-20">
+      {/* Background gradient and pattern */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background to-background/50" />
+      <div className="absolute inset-0 bg-grid-small-black/[0.05] dark:bg-grid-small-white/[0.05]" />
+      
       {/* Gradient divider */}
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="absolute top-0 inset-x-0 flex justify-center">
+        <div className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      </div>
 
-      <div className="container mx-auto">
-        <div className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="container relative mx-auto px-4">
+        <div className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             {/* Left side */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="space-y-4"
+              className="relative space-y-6"
             >
-              <h3 className="text-2xl md:text-3xl ml-8 font-bold bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
-                Let&apos;s Connect!
+              <div className="absolute -top-8 -left-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
+              <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
+              
+              <h3 className="text-3xl md:text-4xl font-bold">
+                <span className="bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
+                  Let&apos;s Connect!
+                </span>
               </h3>
-              <p className="text-muted-foreground max-w-md ml-8 mr-8 text-center">
+              <p className="text-muted-foreground text-lg max-w-md">
                 Feel free to reach out for collaborations or just a friendly
                 hello! I&apos;m always open to discussing new projects or
                 opportunities.
@@ -68,7 +79,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex justify-center md:justify-end space-x-4"
+              className="flex flex-wrap justify-center md:justify-end gap-4"
             >
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
@@ -85,10 +96,11 @@ export default function Footer() {
                     }}
                   >
                     <Button
-                      variant="ghost"
-                      size="icon"
+                      variant="outline"
+                      size="lg"
                       className={cn(
-                        "h-10 w-10 rounded-xl hover:scale-110 transition-transform duration-300",
+                        "relative group h-12 w-12 rounded-full border-primary/20 dark:border-primary/20 hover:border-primary/50 dark:hover:border-primary/50 bg-background/50 hover:bg-background backdrop-blur-sm transition-all duration-300",
+                        "hover:scale-110 hover:-translate-y-1",
                         social.color
                       )}
                       asChild
@@ -98,8 +110,12 @@ export default function Footer() {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={social.name}
+                        className="flex items-center justify-center"
                       >
-                        <Icon className="h-5 w-5" />
+                        <Icon className="h-5 w-5 transition-transform duration-300" />
+                        <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                          {social.name}
+                        </span>
                       </a>
                     </Button>
                   </motion.div>
@@ -114,36 +130,36 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-12 text-center"
+            className="mt-16 pt-8 border-t border-primary/10"
           >
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-              <p className="text-sm text-muted-foreground inline-flex items-center justify-center gap-2">
-                Built with ♥️ by{" "}
-                <a
-                  href="https://github.com/starkryan"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-medium underline-offset-4 hover:text-foreground transition-colors relative group"
-                >
-                  Rohit&nbsp;Rayaan
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-                </a>
-                <Avatar className="w-8 h-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <Avatar className="h-10 w-10 ring-2 ring-primary/20 ring-offset-2 ring-offset-background">
                   <AvatarImage src="app.webp" alt="Rohit Rayaan" />
                   <AvatarFallback>RR</AvatarFallback>
                 </Avatar>
-              </p>
-              <span className="text-muted-foreground">•</span>
+                <p className="text-sm text-muted-foreground">
+                  Built with ♥️ by{" "}
+                  <a
+                    href="https://github.com/starkryan"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-medium hover:text-foreground transition-colors relative group inline-flex items-center gap-1"
+                  >
+                    Rohit Rayaan
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                  </a>
+                </p>
+              </div>
+              
               <a
                 href="https://vercel.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group bg-background/50 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/20"
               >
-                <span className="bg-black text-white dark:bg-white dark:text-black px-2 py-1 rounded text-xs font-medium ml-2">
-                  Powered by
-                </span>
-                <SiVercel className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                <span className="font-medium">Powered by</span>
+                <SiVercel className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
               </a>
             </div>
           </motion.div>

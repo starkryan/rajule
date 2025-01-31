@@ -36,6 +36,7 @@ export default function MainNav() {
       const scrollY = window.scrollY
       const direction = scrollY > lastScrollY.current ? "down" : "up"
       
+      // Hide on scroll down, show on scroll up
       if (direction === "down" && scrollY > 50) {
         setVisible(false)
       } else {
@@ -62,17 +63,17 @@ export default function MainNav() {
 
   return (
     <motion.div
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: 0, opacity: 0 }}
       animate={{ 
         y: visible ? 0 : -100,
         opacity: visible ? 1 : 0,
       }}
       transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
-      className="fixed top-6 left-0 right-0 z-50 mx-auto max-w-fit"
+      className="sticky top-6 left-0 right-0 z-50 mx-auto max-w-fit"
     >
       <header 
         className={cn(
-          "rounded-full border bg-background/80 backdrop-blur-lg shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all duration-300 ease-in-out",
+          "rounded-full border bg-background/80 backdrop-blur-lg shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
           "px-4 sm:px-6 py-2"
         )}
       >

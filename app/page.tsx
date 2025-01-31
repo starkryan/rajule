@@ -34,6 +34,7 @@ import {
   SiPostman,
   SiMongodb,
 } from "react-icons/si";
+import { RiGraduationCapFill } from "react-icons/ri";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { TbBrandReactNative } from "react-icons/tb";
 import {
@@ -216,7 +217,7 @@ export default function HomePage() {
               sequence={[
                 "Full Stack Developer",
                 1500,
-                "UI/UX Enthusiast",
+                "UI/UX Designer",
                 1500,
                 "Open Source Contributor",
                 1500,
@@ -236,7 +237,7 @@ export default function HomePage() {
             variants={fadeInUp}
             className="inline-flex items-center px-4 py-1.5 text-xs mb-8 sm:text-sm font-medium text-foreground dark:text-foreground/90 bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 rounded-full shadow-sm hover:bg-accent/50 dark:hover:bg-accent/20 transition-all duration-300"
           >
-            <FaCode className="h-5 w-5 text-primary dark:text-primary/90 mr-2" />
+            <RiGraduationCapFill className="h-5 w-5 text-primary dark:text-primary/90 mr-2" />
             B.Tech in Computer Science and Engineering
           </motion.p>
 

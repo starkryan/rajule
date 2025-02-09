@@ -202,7 +202,7 @@ export default function HomePage() {
         >
           <motion.div variants={fadeInUp}>
             <Avatar className="w-36 h-36 mb-8 mt-8 border-2 ring-2 ring-primary ring-offset-2 ring-offset-background">
-              <AvatarImage src="you.jpg" alt="Rohit Rayaan" />
+              <AvatarImage src="you.webp" alt="Rohit Rayaan" />
               <AvatarFallback>RR</AvatarFallback>
             </Avatar>
           </motion.div>

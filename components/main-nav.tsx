@@ -69,7 +69,7 @@ export default function MainNav() {
         opacity: visible ? 1 : 0,
       }}
       transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
-      className="sticky top-6 left-0 right-0 z-50 mx-auto max-w-fit"
+      className="fixed top-6 left-0 right-0 z-50 mx-auto max-w-fit"
     >
       <header 
         className={cn(

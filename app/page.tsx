@@ -47,11 +47,38 @@ import {
 import { TypeAnimation } from "react-type-animation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MainNav from "@/components/main-nav";
+import { RiClaudeFill } from "react-icons/ri";
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
+};
+
+const floatingTexts = [
+  { text: "claude", delay: 0, duration: 3, x: -60, y: -80 },
+  { text: "cursor", delay: 0.5, duration: 4, x: 80, y: -60 },
+  { text: "innovation", delay: 1, duration: 3.5, x: -90, y: -40 },
+  { text: "model context protocol", delay: 1.5, duration: 4.5, x: 100, y: -20 },
+  { text: "vibe coding", delay: 2, duration: 3, x: -70, y: 0 },
+  { text: "context engineering", delay: 2.5, duration: 4, x: 90, y: 20 },
+  { text: "AGI", delay: 3, duration: 3.5, x: -80, y: 40 },
+  { text: "BCI", delay: 0.8, duration: 4, x: 60, y: -100 },
+];
+
+const floatingTextAnimation = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: {
+    opacity: [0, 0.7, 1, 0.7, 0],
+    scale: [0.8, 1, 1.1, 1, 0.8],
+  },
+  transition: {
+    duration: 4,
+    ease: "easeInOut",
+    repeat: Infinity,
+    repeatDelay: 2,
+  },
 };
 
 const staggerContainer = {
@@ -200,11 +227,67 @@ export default function HomePage() {
           initial="initial"
           animate="animate"
         >
-          <motion.div variants={fadeInUp}>
-            <Avatar className="w-36 h-36 mb-8 mt-8 border-2 ring-2 ring-primary ring-offset-2 ring-offset-background">
-              <AvatarImage src="you.webp" alt="Rohit Rayaan" />
-              <AvatarFallback>RR</AvatarFallback>
-            </Avatar>
+          <motion.div variants={fadeInUp} className="relative">
+            {/* Floating Text Elements */}
+            {floatingTexts.map((floatingText, index) => (
+              <motion.div
+                key={index}
+                className="absolute text-sm sm:text-base md:text-lg font-medium text-primary/70 dark:text-primary/60 pointer-events-none"
+                style={{
+                  left: "50%",
+                  top: "50%",
+                  x: floatingText.x,
+                  y: floatingText.y,
+                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity: [0, 0.6, 1, 0.6, 0],
+                  scale: [0.8, 1, 1.1, 1, 0.8],
+                }}
+                transition={{
+                  duration: floatingText.duration,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatDelay: 1.5,
+                  delay: floatingText.delay,
+                }}
+              >
+                {floatingText.text}
+              </motion.div>
+            ))}
+
+            <motion.div className="relative mb-8 mt-16">
+              {/* Rotating Circle Border */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div
+                  className="absolute w-[180px] h-[180px] rounded-full border-2 border-primary/30 border-dashed"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 15,
+                    ease: "linear",
+                    repeat: Infinity,
+                  }}
+                />
+                <motion.div
+                  className="absolute w-[180px] h-[180px] rounded-full border-2 border-primary/50"
+                  style={{ borderStyle: 'dotted', borderWidth: '2px' }}
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: -360 }}
+                  transition={{
+                    duration: 20,
+                    ease: "linear",
+                    repeat: Infinity,
+                  }}
+                />
+              </div>
+
+              {/* Avatar in center */}
+              <Avatar className="w-36 h-36 relative z-10 mx-auto border-2 ring-2 ring-primary ring-offset-2 ring-offset-background">
+                <AvatarImage src="you.webp" alt="Rohit Rayaan" />
+                <AvatarFallback>RR</AvatarFallback>
+              </Avatar>
+            </motion.div>
           </motion.div>
           <motion.h1
             variants={fadeInUp}
@@ -217,11 +300,11 @@ export default function HomePage() {
               sequence={[
                 "Full Stack Developer",
                 1500,
-                "UI/UX Designer",
+                "Prompt Engineering",
                 1500,
-                "Open Source Contributor",
+                "VIbe Coding...",
                 1500,
-                "Tech Explorer",
+                "Context Engineering",
                 1500,
                 "Android & iOS Developer",
                 1500,
@@ -230,14 +313,14 @@ export default function HomePage() {
               speed={50}
               cursor={true}
               repeat={Infinity}
-              className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60"
+              className="text-2xl font-semibold bg-clip-text text-primary"
             />
           </motion.div>
           <motion.p
             variants={fadeInUp}
-            className="inline-flex items-center px-4 py-1.5 text-xs mb-8 sm:text-sm font-medium text-foreground dark:text-foreground/90 bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 rounded-full shadow-sm hover:bg-accent/50 dark:hover:bg-accent/20 transition-all duration-300"
+            className="inline-flex items-center px-4 py-1.5 text-xs mb-8 sm:text-sm font-medium text-foreground bg-background/50 backdrop-blur-sm border border-border rounded-full shadow-sm hover:bg-accent/50 transition-all duration-300"
           >
-            <RiGraduationCapFill className="h-5 w-5 text-primary dark:text-primary/90 mr-2" />
+            <RiGraduationCapFill className="h-5 w-5 text-primary mr-2" />
             B.Tech in Computer Science and Engineering
           </motion.p>
 
@@ -250,7 +333,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, rotate: 360 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiReact className="h-5 w-5 text-[#61DAFB] hover:animate-spin" />
             </motion.div>
@@ -259,7 +342,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiNextdotjs className="h-5 w-5" />
             </motion.div>
@@ -268,7 +351,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiTypescript className="h-5 w-5 text-[#3178C6]" />
             </motion.div>
@@ -277,7 +360,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiNodedotjs className="h-5 w-5 text-[#339933]" />
             </motion.div>
@@ -286,7 +369,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiTailwindcss className="h-5 w-5 text-[#38B2AC]" />
             </motion.div>
@@ -295,7 +378,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <TbBrandReactNative className="h-5 w-5 text-[#21e9df]" />
             </motion.div>
@@ -304,7 +387,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiMongodb className="h-5 w-5 text-[#47A248]" />
             </motion.div>
@@ -314,7 +397,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiLinux className="h-5 w-5 text-[#FCC624]" />
             </motion.div>
@@ -323,7 +406,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <BiLogoVisualStudio className="h-5 w-5 text-[#007ACC]" />
             </motion.div>
@@ -332,7 +415,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiPostman className="h-5 w-5 text-[#FF6C37]" />
             </motion.div>
@@ -341,7 +424,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiGithub className="h-5 w-5" />
             </motion.div>
@@ -350,7 +433,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="p-2 rounded-lg bg-background/50 dark:bg-background/50 backdrop-blur-sm border border-border dark:border-border/50 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
+              className="p-2 rounded-lg bg-background/50 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
             >
               <SiDocker className="h-5 w-5 text-[#2496ED]" />
             </motion.div>
@@ -408,74 +491,7 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        {/* Projects Section */}
-        <section id="projects" className="container mx-auto px-4 py-16">
-          <div className="flex items-center gap-2 mb-8">
-            <FaCode className="h-6 w-6 text-primary" />
-            <h2 className="text-3xl font-bold">Featured Projects</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between">
-                      Project {index + 1}
-                      <div className="flex gap-2">
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="h-8 w-8"
-                          asChild
-                        >
-                          <a href="#" target="_blank" rel="noopener noreferrer">
-                            <SiGithub className="h-4 w-4" />
-                          </a>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="h-8 w-8"
-                          asChild
-                        >
-                          <a href="#" target="_blank" rel="noopener noreferrer">
-                            <FaExternalLinkAlt className="h-4 w-4" />
-                          </a>
-                        </Button>
-                      </div>
-                    </CardTitle>
-                    <CardDescription>
-                      A brief description of the project
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Detailed explanation of the project, technologies used,
-                      and your role.
-                    </p>
-                    <div className="flex gap-2">
-                      <Badge>React</Badge>
-                      <Badge>
-                        {index === 0
-                          ? "TypeScript"
-                          : index === 1
-                          ? "Next.js"
-                          : "Node.js"}
-                      </Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
+  
         {/* Page 4 */}
         <div
           className="relative flex flex-col items-center justify-center py-32 w-full overflow-hidden bg-background"

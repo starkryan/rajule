@@ -141,7 +141,7 @@ export default function Footer() {
                 <p className="text-sm text-muted-foreground">
                   Built with ♥️ by{" "}
                   <a
-                    href="https://github.com/starkryan"
+                    href="https://instagram.com/rohitrayaan"
                     target="_blank"
                     rel="noreferrer"
                     className="font-medium hover:text-foreground transition-colors relative group inline-flex items-center gap-1"

@@ -6,7 +6,6 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardContent,
 } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -41,13 +40,11 @@ import {
   FaBrain,
   FaCode,
   FaRocket,
-  FaExternalLinkAlt,
   FaArrowRight,
 } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MainNav from "@/components/main-nav";
-import { RiClaudeFill } from "react-icons/ri";
 
 
 const fadeInUp = {
@@ -66,20 +63,6 @@ const floatingTexts = [
   { text: "AGI", delay: 3, duration: 3.5, x: -80, y: 40 },
   { text: "BCI", delay: 0.8, duration: 4, x: 60, y: -100 },
 ];
-
-const floatingTextAnimation = {
-  initial: { opacity: 0, scale: 0.8 },
-  animate: {
-    opacity: [0, 0.7, 1, 0.7, 0],
-    scale: [0.8, 1, 1.1, 1, 0.8],
-  },
-  transition: {
-    duration: 4,
-    ease: "easeInOut",
-    repeat: Infinity,
-    repeatDelay: 2,
-  },
-};
 
 const staggerContainer = {
   initial: {},
